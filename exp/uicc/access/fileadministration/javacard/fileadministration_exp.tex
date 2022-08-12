@@ -1,0 +1,625 @@
+export file {		// uicc/access/fileadministration
+	magic	00FACADE		 // in hex
+	minor_version	1
+	major_version	2
+	constant_pool_count	70
+	constant_pool {
+		Constant_Utf8_info {
+			tag	1
+			length	6
+			bytes	select
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	8
+			bytes	(S[BSS)S
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	4
+			bytes	(S)V
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	4
+			bytes	(B)V
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	6
+			bytes	status
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	7
+			bytes	([BSS)S
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	10
+			bytes	readBinary
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	12
+			bytes	updateBinary
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	8
+			bytes	(S[BSS)V
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	10
+			bytes	readRecord
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	10
+			bytes	(SBS[BSS)S
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	12
+			bytes	updateRecord
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	10
+			bytes	(SBS[BSS)V
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	12
+			bytes	searchRecord
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	14
+			bytes	(BSS[BSS[SSS)S
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	8
+			bytes	increase
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	10
+			bytes	([BSS[BS)S
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	14
+			bytes	deactivateFile
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	3
+			bytes	()V
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	12
+			bytes	activateFile
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	10
+			bytes	deleteFile
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	10
+			bytes	createFile
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	29
+			bytes	(Luicc/toolkit/ViewHandler;)V
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	10
+			bytes	resizeFile
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	44
+			bytes	uicc/access/fileadministration/AdminFileView
+		}
+		Constant_Classref_info {
+			tag	7
+			name_index	24		// uicc/access/fileadministration/AdminFileView
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	16
+			bytes	java/lang/Object
+		}
+		Constant_Classref_info {
+			tag	7
+			name_index	26		// java/lang/Object
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	28
+			bytes	javacard/framework/Shareable
+		}
+		Constant_Classref_info {
+			tag	7
+			name_index	28		// javacard/framework/Shareable
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	20
+			bytes	uicc/access/FileView
+		}
+		Constant_Classref_info {
+			tag	7
+			name_index	30		// uicc/access/FileView
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	20
+			bytes	INCORRECT_PARAMETERS
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	1
+			bytes	S
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	13
+			bytes	ConstantValue
+		}
+		Constant_Integer_info {
+			tag	3
+			bytes	1
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	19
+			bytes	FILE_ALREADY_EXISTS
+		}
+		Constant_Integer_info {
+			tag	3
+			bytes	2
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	31
+			bytes	CONDITIONS_OF_USE_NOT_SATISFIED
+		}
+		Constant_Integer_info {
+			tag	3
+			bytes	3
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	23
+			bytes	NOT_ENOUGH_MEMORY_SPACE
+		}
+		Constant_Integer_info {
+			tag	3
+			bytes	4
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	22
+			bytes	DF_NAME_ALREADY_EXISTS
+		}
+		Constant_Integer_info {
+			tag	3
+			bytes	5
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	6
+			bytes	<init>
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	7
+			bytes	throwIt
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	6
+			bytes	equals
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	21
+			bytes	(Ljava/lang/Object;)Z
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	9
+			bytes	getReason
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	3
+			bytes	()S
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	9
+			bytes	setReason
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	45
+			bytes	uicc/access/fileadministration/AdminException
+		}
+		Constant_Classref_info {
+			tag	7
+			name_index	51		// uicc/access/fileadministration/AdminException
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	19
+			bytes	java/lang/Throwable
+		}
+		Constant_Classref_info {
+			tag	7
+			name_index	53		// java/lang/Throwable
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	19
+			bytes	java/lang/Exception
+		}
+		Constant_Classref_info {
+			tag	7
+			name_index	55		// java/lang/Exception
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	26
+			bytes	java/lang/RuntimeException
+		}
+		Constant_Classref_info {
+			tag	7
+			name_index	57		// java/lang/RuntimeException
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	39
+			bytes	javacard/framework/CardRuntimeException
+		}
+		Constant_Classref_info {
+			tag	7
+			name_index	59		// javacard/framework/CardRuntimeException
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	23
+			bytes	getTheUICCAdminFileView
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	49
+			bytes	(B)Luicc/access/fileadministration/AdminFileView;
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	19
+			bytes	getTheAdminFileView
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	73
+			bytes	(Ljavacard/framework/AID;B)Luicc/access/fileadministration/AdminFileView;
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	53
+			bytes	([BSBB)Luicc/access/fileadministration/AdminFileView;
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	51
+			bytes	uicc/access/fileadministration/AdminFileViewBuilder
+		}
+		Constant_Classref_info {
+			tag	7
+			name_index	66		// uicc/access/fileadministration/AdminFileViewBuilder
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	30
+			bytes	uicc/access/fileadministration
+		}
+		CONSTANT_Package_info {
+			tag	13
+			flags	1
+			name_index	68		// uicc/access/fileadministration
+			minor_version	0
+			major_version	1
+			aid_length	16
+			aid	0xA0:0x0:0x0:0x0:0x9:0x0:0x5:0xFF:0xFF:0xFF:0xFF:0x89:0x11:0x1:0x0:0x0
+		}
+	}
+	this_package	69
+	export_class_count	3
+	export_classes {
+		class_info {		// uicc/access/fileadministration/AdminFileView
+			token	0
+			access_flags	public abstract interface shareable
+			name_index	25		// uicc/access/fileadministration/AdminFileView
+			export_supers_count	1
+			supers {
+				constant_pool_index	27		// java/lang/Object
+			}
+			export_interfaces_count	2
+			interfaces {
+				constant_pool_index	29		// javacard/framework/Shareable
+				constant_pool_index	31		// uicc/access/FileView
+			}
+			export_fields_count	0
+			fields {
+			}
+			export_methods_count	15
+			methods {
+				method_info {
+					token	0
+					access_flags	public abstract
+					name_index	0		// select
+					Descriptor_Index	1		// (S[BSS)S
+				}
+				method_info {
+					token	1
+					access_flags	public abstract
+					name_index	0		// select
+					Descriptor_Index	2		// (S)V
+				}
+				method_info {
+					token	2
+					access_flags	public abstract
+					name_index	0		// select
+					Descriptor_Index	3		// (B)V
+				}
+				method_info {
+					token	3
+					access_flags	public abstract
+					name_index	4		// status
+					Descriptor_Index	5		// ([BSS)S
+				}
+				method_info {
+					token	4
+					access_flags	public abstract
+					name_index	6		// readBinary
+					Descriptor_Index	1		// (S[BSS)S
+				}
+				method_info {
+					token	5
+					access_flags	public abstract
+					name_index	7		// updateBinary
+					Descriptor_Index	8		// (S[BSS)V
+				}
+				method_info {
+					token	6
+					access_flags	public abstract
+					name_index	9		// readRecord
+					Descriptor_Index	10		// (SBS[BSS)S
+				}
+				method_info {
+					token	7
+					access_flags	public abstract
+					name_index	11		// updateRecord
+					Descriptor_Index	12		// (SBS[BSS)V
+				}
+				method_info {
+					token	8
+					access_flags	public abstract
+					name_index	13		// searchRecord
+					Descriptor_Index	14		// (BSS[BSS[SSS)S
+				}
+				method_info {
+					token	9
+					access_flags	public abstract
+					name_index	15		// increase
+					Descriptor_Index	16		// ([BSS[BS)S
+				}
+				method_info {
+					token	10
+					access_flags	public abstract
+					name_index	17		// deactivateFile
+					Descriptor_Index	18		// ()V
+				}
+				method_info {
+					token	11
+					access_flags	public abstract
+					name_index	19		// activateFile
+					Descriptor_Index	18		// ()V
+				}
+				method_info {
+					token	12
+					access_flags	public abstract
+					name_index	20		// deleteFile
+					Descriptor_Index	2		// (S)V
+				}
+				method_info {
+					token	13
+					access_flags	public abstract
+					name_index	21		// createFile
+					Descriptor_Index	22		// (Luicc/toolkit/ViewHandler;)V
+				}
+				method_info {
+					token	14
+					access_flags	public abstract
+					name_index	23		// resizeFile
+					Descriptor_Index	22		// (Luicc/toolkit/ViewHandler;)V
+				}
+			}
+		}
+		class_info {		// uicc/access/fileadministration/AdminException
+			token	1
+			access_flags	public
+			name_index	52		// uicc/access/fileadministration/AdminException
+			export_supers_count	5
+			supers {
+				constant_pool_index	27		// java/lang/Object
+				constant_pool_index	54		// java/lang/Throwable
+				constant_pool_index	56		// java/lang/Exception
+				constant_pool_index	58		// java/lang/RuntimeException
+				constant_pool_index	60		// javacard/framework/CardRuntimeException
+			}
+			export_interfaces_count	0
+			interfaces {
+			}
+			export_fields_count	5
+			fields {
+			field_info {
+				token	255
+				access_flags	public static final
+				name_index	32		// INCORRECT_PARAMETERS
+				Descriptor_Index	33		// S
+				attributes_count	1
+				attributes {
+				ConstantValue_attribute {
+					attribute_name_index	34		// ConstantValue
+					attribute_length	2
+					constantvalue_index	35		// value = 1
+				}
+				}
+			}
+			field_info {
+				token	255
+				access_flags	public static final
+				name_index	36		// FILE_ALREADY_EXISTS
+				Descriptor_Index	33		// S
+				attributes_count	1
+				attributes {
+				ConstantValue_attribute {
+					attribute_name_index	34		// ConstantValue
+					attribute_length	2
+					constantvalue_index	37		// value = 2
+				}
+				}
+			}
+			field_info {
+				token	255
+				access_flags	public static final
+				name_index	38		// CONDITIONS_OF_USE_NOT_SATISFIED
+				Descriptor_Index	33		// S
+				attributes_count	1
+				attributes {
+				ConstantValue_attribute {
+					attribute_name_index	34		// ConstantValue
+					attribute_length	2
+					constantvalue_index	39		// value = 3
+				}
+				}
+			}
+			field_info {
+				token	255
+				access_flags	public static final
+				name_index	40		// NOT_ENOUGH_MEMORY_SPACE
+				Descriptor_Index	33		// S
+				attributes_count	1
+				attributes {
+				ConstantValue_attribute {
+					attribute_name_index	34		// ConstantValue
+					attribute_length	2
+					constantvalue_index	41		// value = 4
+				}
+				}
+			}
+			field_info {
+				token	255
+				access_flags	public static final
+				name_index	42		// DF_NAME_ALREADY_EXISTS
+				Descriptor_Index	33		// S
+				attributes_count	1
+				attributes {
+				ConstantValue_attribute {
+					attribute_name_index	34		// ConstantValue
+					attribute_length	2
+					constantvalue_index	43		// value = 5
+				}
+				}
+			}
+			}
+			export_methods_count	5
+			methods {
+				method_info {
+					token	0
+					access_flags	public
+					name_index	44		// <init>
+					Descriptor_Index	2		// (S)V
+				}
+				method_info {
+					token	1
+					access_flags	public static
+					name_index	45		// throwIt
+					Descriptor_Index	2		// (S)V
+				}
+				method_info {
+					token	0
+					access_flags	public
+					name_index	46		// equals
+					Descriptor_Index	47		// (Ljava/lang/Object;)Z
+				}
+				method_info {
+					token	1
+					access_flags	public
+					name_index	48		// getReason
+					Descriptor_Index	49		// ()S
+				}
+				method_info {
+					token	2
+					access_flags	public
+					name_index	50		// setReason
+					Descriptor_Index	2		// (S)V
+				}
+			}
+		}
+		class_info {		// uicc/access/fileadministration/AdminFileViewBuilder
+			token	2
+			access_flags	public
+			name_index	67		// uicc/access/fileadministration/AdminFileViewBuilder
+			export_supers_count	1
+			supers {
+				constant_pool_index	27		// java/lang/Object
+			}
+			export_interfaces_count	0
+			interfaces {
+			}
+			export_fields_count	0
+			fields {
+			}
+			export_methods_count	4
+			methods {
+				method_info {
+					token	0
+					access_flags	public static
+					name_index	61		// getTheUICCAdminFileView
+					Descriptor_Index	62		// (B)Luicc/access/fileadministration/AdminFileView;
+				}
+				method_info {
+					token	1
+					access_flags	public static
+					name_index	63		// getTheAdminFileView
+					Descriptor_Index	64		// (Ljavacard/framework/AID;B)Luicc/access/fileadministration/AdminFileView;
+				}
+				method_info {
+					token	2
+					access_flags	public static
+					name_index	63		// getTheAdminFileView
+					Descriptor_Index	65		// ([BSBB)Luicc/access/fileadministration/AdminFileView;
+				}
+				method_info {
+					token	0
+					access_flags	public
+					name_index	46		// equals
+					Descriptor_Index	47		// (Ljava/lang/Object;)Z
+				}
+			}
+		}
+	}
+}

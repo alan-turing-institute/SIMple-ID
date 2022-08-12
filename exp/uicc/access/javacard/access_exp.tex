@@ -1,0 +1,1796 @@
+export file {		// uicc/access
+	magic	00FACADE		 // in hex
+	minor_version	1
+	major_version	2
+	constant_pool_count	165
+	constant_pool {
+		Constant_Utf8_info {
+			tag	1
+			length	6
+			bytes	select
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	8
+			bytes	(S[BSS)S
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	4
+			bytes	(S)V
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	4
+			bytes	(B)V
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	6
+			bytes	status
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	7
+			bytes	([BSS)S
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	10
+			bytes	readBinary
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	12
+			bytes	updateBinary
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	8
+			bytes	(S[BSS)V
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	10
+			bytes	readRecord
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	10
+			bytes	(SBS[BSS)S
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	12
+			bytes	updateRecord
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	10
+			bytes	(SBS[BSS)V
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	12
+			bytes	searchRecord
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	14
+			bytes	(BSS[BSS[SSS)S
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	8
+			bytes	increase
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	10
+			bytes	([BSS[BS)S
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	14
+			bytes	deactivateFile
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	3
+			bytes	()V
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	12
+			bytes	activateFile
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	20
+			bytes	uicc/access/FileView
+		}
+		Constant_Classref_info {
+			tag	7
+			name_index	20		// uicc/access/FileView
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	16
+			bytes	java/lang/Object
+		}
+		Constant_Classref_info {
+			tag	7
+			name_index	22		// java/lang/Object
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	28
+			bytes	javacard/framework/Shareable
+		}
+		Constant_Classref_info {
+			tag	7
+			name_index	24		// javacard/framework/Shareable
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	10
+			bytes	FID_EF_DIR
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	1
+			bytes	S
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	13
+			bytes	ConstantValue
+		}
+		Constant_Integer_info {
+			tag	3
+			bytes	12032
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	12
+			bytes	FID_EF_ICCID
+		}
+		Constant_Integer_info {
+			tag	3
+			bytes	12258
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	10
+			bytes	FID_EF_ARR
+		}
+		Constant_Integer_info {
+			tag	3
+			bytes	12038
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	9
+			bytes	FID_EF_PL
+		}
+		Constant_Integer_info {
+			tag	3
+			bytes	12037
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	14
+			bytes	FID_DF_TELECOM
+		}
+		Constant_Integer_info {
+			tag	3
+			bytes	32528
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	15
+			bytes	FID_DF_GRAPHICS
+		}
+		Constant_Integer_info {
+			tag	3
+			bytes	24400
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	10
+			bytes	FID_EF_ADN
+		}
+		Constant_Integer_info {
+			tag	3
+			bytes	28474
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	10
+			bytes	FID_EF_FDN
+		}
+		Constant_Integer_info {
+			tag	3
+			bytes	28475
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	10
+			bytes	FID_EF_SMS
+		}
+		Constant_Integer_info {
+			tag	3
+			bytes	28476
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	10
+			bytes	FID_EF_CCP
+		}
+		Constant_Integer_info {
+			tag	3
+			bytes	28477
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	13
+			bytes	FID_EF_MSISDN
+		}
+		Constant_Integer_info {
+			tag	3
+			bytes	28480
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	11
+			bytes	FID_EF_SMSP
+		}
+		Constant_Integer_info {
+			tag	3
+			bytes	28482
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	11
+			bytes	FID_EF_SMSS
+		}
+		Constant_Integer_info {
+			tag	3
+			bytes	28483
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	10
+			bytes	FID_EF_LND
+		}
+		Constant_Integer_info {
+			tag	3
+			bytes	28484
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	10
+			bytes	FID_EF_SDN
+		}
+		Constant_Integer_info {
+			tag	3
+			bytes	28489
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	11
+			bytes	FID_EF_EXT1
+		}
+		Constant_Integer_info {
+			tag	3
+			bytes	28490
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	11
+			bytes	FID_EF_EXT2
+		}
+		Constant_Integer_info {
+			tag	3
+			bytes	28491
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	11
+			bytes	FID_EF_EXT3
+		}
+		Constant_Integer_info {
+			tag	3
+			bytes	28492
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	10
+			bytes	FID_EF_BDN
+		}
+		Constant_Integer_info {
+			tag	3
+			bytes	28493
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	11
+			bytes	FID_EF_EXT4
+		}
+		Constant_Integer_info {
+			tag	3
+			bytes	28494
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	11
+			bytes	FID_EF_SMSR
+		}
+		Constant_Integer_info {
+			tag	3
+			bytes	28487
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	10
+			bytes	FID_EF_IMG
+		}
+		Constant_Integer_info {
+			tag	3
+			bytes	20256
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	27
+			bytes	SIMPLE_SEARCH_START_FORWARD
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	1
+			bytes	B
+		}
+		Constant_Integer_info {
+			tag	3
+			bytes	4
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	28
+			bytes	SIMPLE_SEARCH_START_BACKWARD
+		}
+		Constant_Integer_info {
+			tag	3
+			bytes	5
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	15
+			bytes	ENHANCED_SEARCH
+		}
+		Constant_Integer_info {
+			tag	3
+			bytes	6
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	44
+			bytes	SEARCH_INDICATION_START_FORWARD_FROM_NEXT_GR
+		}
+		Constant_Integer_info {
+			tag	3
+			bytes	1024
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	49
+			bytes	SEARCH_INDICATION_START_BACKWARD_FROM_PREVIOUS_GR
+		}
+		Constant_Integer_info {
+			tag	3
+			bytes	1280
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	41
+			bytes	SEARCH_INDICATION_START_FORWARD_FROM_NEXT
+		}
+		Constant_Integer_info {
+			tag	3
+			bytes	1536
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	46
+			bytes	SEARCH_INDICATION_START_BACKWARD_FROM_PREVIOUS
+		}
+		Constant_Integer_info {
+			tag	3
+			bytes	1792
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	20
+			bytes	REC_ACC_MODE_CURRENT
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	21
+			bytes	REC_ACC_MODE_ABSOLUTE
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	17
+			bytes	REC_ACC_MODE_NEXT
+		}
+		Constant_Integer_info {
+			tag	3
+			bytes	2
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	21
+			bytes	REC_ACC_MODE_PREVIOUS
+		}
+		Constant_Integer_info {
+			tag	3
+			bytes	3
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	23
+			bytes	TAG_FCP_FILE_DESCRIPTOR
+		}
+		Constant_Integer_info {
+			tag	3
+			bytes	-126
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	23
+			bytes	TAG_FCP_FILE_IDENTIFIER
+		}
+		Constant_Integer_info {
+			tag	3
+			bytes	-125
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	16
+			bytes	TAG_FCP_FILE_AID
+		}
+		Constant_Integer_info {
+			tag	3
+			bytes	-124
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	29
+			bytes	TAG_FCP_FILE_PROPRIETARY_INFO
+		}
+		Constant_Integer_info {
+			tag	3
+			bytes	-91
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	19
+			bytes	TAG_FCP_LCS_INTEGER
+		}
+		Constant_Integer_info {
+			tag	3
+			bytes	-118
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	30
+			bytes	TAG_FCP_PIN_STATUS_TEMPLATE_DO
+		}
+		Constant_Integer_info {
+			tag	3
+			bytes	-58
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	17
+			bytes	TAG_FCP_FILE_SIZE
+		}
+		Constant_Integer_info {
+			tag	3
+			bytes	-128
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	23
+			bytes	TAG_FCP_TOTAL_FILE_SIZE
+		}
+		Constant_Integer_info {
+			tag	3
+			bytes	-127
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	29
+			bytes	TAG_FCP_SHORT_FILE_IDENTIFIER
+		}
+		Constant_Integer_info {
+			tag	3
+			bytes	-120
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	29
+			bytes	TAG_FCP_SECURITY_ATTRIBUTE_CF
+		}
+		Constant_Integer_info {
+			tag	3
+			bytes	-116
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	29
+			bytes	TAG_FCP_SECURITY_ATTRIBUTE_EF
+		}
+		Constant_Integer_info {
+			tag	3
+			bytes	-85
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	33
+			bytes	TAG_FCP_SECURITY_ATTRIBUTE_REF_EF
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	25
+			bytes	uicc/access/UICCConstants
+		}
+		Constant_Classref_info {
+			tag	7
+			name_index	116		// uicc/access/UICCConstants
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	14
+			bytes	NO_EF_SELECTED
+		}
+		Constant_Integer_info {
+			tag	3
+			bytes	1
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	14
+			bytes	FILE_NOT_FOUND
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	16
+			bytes	RECORD_NOT_FOUND
+		}
+		Constant_Integer_info {
+			tag	3
+			bytes	9
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	14
+			bytes	INTERNAL_ERROR
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	12
+			bytes	INVALID_MODE
+		}
+		Constant_Integer_info {
+			tag	3
+			bytes	10
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	22
+			bytes	OUT_OF_FILE_BOUNDARIES
+		}
+		Constant_Integer_info {
+			tag	3
+			bytes	7
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	17
+			bytes	MAX_VALUE_REACHED
+		}
+		Constant_Integer_info {
+			tag	3
+			bytes	12
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	14
+			bytes	MEMORY_PROBLEM
+		}
+		Constant_Integer_info {
+			tag	3
+			bytes	13
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	29
+			bytes	SECURITY_STATUS_NOT_SATISFIED
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	20
+			bytes	COMMAND_INCOMPATIBLE
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	24
+			bytes	OUT_OF_RECORD_BOUNDARIES
+		}
+		Constant_Integer_info {
+			tag	3
+			bytes	8
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	20
+			bytes	REF_DATA_INVALIDATED
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	31
+			bytes	CONDITIONS_OF_USE_NOT_SATISFIED
+		}
+		Constant_Integer_info {
+			tag	3
+			bytes	14
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	6
+			bytes	<init>
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	7
+			bytes	throwIt
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	6
+			bytes	equals
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	21
+			bytes	(Ljava/lang/Object;)Z
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	9
+			bytes	getReason
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	3
+			bytes	()S
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	9
+			bytes	setReason
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	25
+			bytes	uicc/access/UICCException
+		}
+		Constant_Classref_info {
+			tag	7
+			name_index	146		// uicc/access/UICCException
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	19
+			bytes	java/lang/Throwable
+		}
+		Constant_Classref_info {
+			tag	7
+			name_index	148		// java/lang/Throwable
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	19
+			bytes	java/lang/Exception
+		}
+		Constant_Classref_info {
+			tag	7
+			name_index	150		// java/lang/Exception
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	26
+			bytes	java/lang/RuntimeException
+		}
+		Constant_Classref_info {
+			tag	7
+			name_index	152		// java/lang/RuntimeException
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	39
+			bytes	javacard/framework/CardRuntimeException
+		}
+		Constant_Classref_info {
+			tag	7
+			name_index	154		// javacard/framework/CardRuntimeException
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	14
+			bytes	getTheUICCView
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	25
+			bytes	(B)Luicc/access/FileView;
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	14
+			bytes	getTheFileView
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	49
+			bytes	(Ljavacard/framework/AID;B)Luicc/access/FileView;
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	29
+			bytes	([BSBB)Luicc/access/FileView;
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	22
+			bytes	uicc/access/UICCSystem
+		}
+		Constant_Classref_info {
+			tag	7
+			name_index	161		// uicc/access/UICCSystem
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	11
+			bytes	uicc/access
+		}
+		CONSTANT_Package_info {
+			tag	13
+			flags	1
+			name_index	163		// uicc/access
+			minor_version	1
+			major_version	1
+			aid_length	16
+			aid	0xA0:0x0:0x0:0x0:0x9:0x0:0x5:0xFF:0xFF:0xFF:0xFF:0x89:0x11:0x0:0x0:0x0
+		}
+	}
+	this_package	164
+	export_class_count	4
+	export_classes {
+		class_info {		// uicc/access/FileView
+			token	0
+			access_flags	public abstract interface shareable
+			name_index	21		// uicc/access/FileView
+			export_supers_count	1
+			supers {
+				constant_pool_index	23		// java/lang/Object
+			}
+			export_interfaces_count	1
+			interfaces {
+				constant_pool_index	25		// javacard/framework/Shareable
+			}
+			export_fields_count	0
+			fields {
+			}
+			export_methods_count	12
+			methods {
+				method_info {
+					token	0
+					access_flags	public abstract
+					name_index	0		// select
+					Descriptor_Index	1		// (S[BSS)S
+				}
+				method_info {
+					token	1
+					access_flags	public abstract
+					name_index	0		// select
+					Descriptor_Index	2		// (S)V
+				}
+				method_info {
+					token	2
+					access_flags	public abstract
+					name_index	0		// select
+					Descriptor_Index	3		// (B)V
+				}
+				method_info {
+					token	3
+					access_flags	public abstract
+					name_index	4		// status
+					Descriptor_Index	5		// ([BSS)S
+				}
+				method_info {
+					token	4
+					access_flags	public abstract
+					name_index	6		// readBinary
+					Descriptor_Index	1		// (S[BSS)S
+				}
+				method_info {
+					token	5
+					access_flags	public abstract
+					name_index	7		// updateBinary
+					Descriptor_Index	8		// (S[BSS)V
+				}
+				method_info {
+					token	6
+					access_flags	public abstract
+					name_index	9		// readRecord
+					Descriptor_Index	10		// (SBS[BSS)S
+				}
+				method_info {
+					token	7
+					access_flags	public abstract
+					name_index	11		// updateRecord
+					Descriptor_Index	12		// (SBS[BSS)V
+				}
+				method_info {
+					token	8
+					access_flags	public abstract
+					name_index	13		// searchRecord
+					Descriptor_Index	14		// (BSS[BSS[SSS)S
+				}
+				method_info {
+					token	9
+					access_flags	public abstract
+					name_index	15		// increase
+					Descriptor_Index	16		// ([BSS[BS)S
+				}
+				method_info {
+					token	10
+					access_flags	public abstract
+					name_index	17		// deactivateFile
+					Descriptor_Index	18		// ()V
+				}
+				method_info {
+					token	11
+					access_flags	public abstract
+					name_index	19		// activateFile
+					Descriptor_Index	18		// ()V
+				}
+			}
+		}
+		class_info {		// uicc/access/UICCConstants
+			token	1
+			access_flags	public abstract interface
+			name_index	117		// uicc/access/UICCConstants
+			export_supers_count	1
+			supers {
+				constant_pool_index	23		// java/lang/Object
+			}
+			export_interfaces_count	0
+			interfaces {
+			}
+			export_fields_count	45
+			fields {
+			field_info {
+				token	255
+				access_flags	public static final
+				name_index	26		// FID_EF_DIR
+				Descriptor_Index	27		// S
+				attributes_count	1
+				attributes {
+				ConstantValue_attribute {
+					attribute_name_index	28		// ConstantValue
+					attribute_length	2
+					constantvalue_index	29		// value = 12032
+				}
+				}
+			}
+			field_info {
+				token	255
+				access_flags	public static final
+				name_index	30		// FID_EF_ICCID
+				Descriptor_Index	27		// S
+				attributes_count	1
+				attributes {
+				ConstantValue_attribute {
+					attribute_name_index	28		// ConstantValue
+					attribute_length	2
+					constantvalue_index	31		// value = 12258
+				}
+				}
+			}
+			field_info {
+				token	255
+				access_flags	public static final
+				name_index	32		// FID_EF_ARR
+				Descriptor_Index	27		// S
+				attributes_count	1
+				attributes {
+				ConstantValue_attribute {
+					attribute_name_index	28		// ConstantValue
+					attribute_length	2
+					constantvalue_index	33		// value = 12038
+				}
+				}
+			}
+			field_info {
+				token	255
+				access_flags	public static final
+				name_index	34		// FID_EF_PL
+				Descriptor_Index	27		// S
+				attributes_count	1
+				attributes {
+				ConstantValue_attribute {
+					attribute_name_index	28		// ConstantValue
+					attribute_length	2
+					constantvalue_index	35		// value = 12037
+				}
+				}
+			}
+			field_info {
+				token	255
+				access_flags	public static final
+				name_index	36		// FID_DF_TELECOM
+				Descriptor_Index	27		// S
+				attributes_count	1
+				attributes {
+				ConstantValue_attribute {
+					attribute_name_index	28		// ConstantValue
+					attribute_length	2
+					constantvalue_index	37		// value = 32528
+				}
+				}
+			}
+			field_info {
+				token	255
+				access_flags	public static final
+				name_index	38		// FID_DF_GRAPHICS
+				Descriptor_Index	27		// S
+				attributes_count	1
+				attributes {
+				ConstantValue_attribute {
+					attribute_name_index	28		// ConstantValue
+					attribute_length	2
+					constantvalue_index	39		// value = 24400
+				}
+				}
+			}
+			field_info {
+				token	255
+				access_flags	public static final
+				name_index	40		// FID_EF_ADN
+				Descriptor_Index	27		// S
+				attributes_count	1
+				attributes {
+				ConstantValue_attribute {
+					attribute_name_index	28		// ConstantValue
+					attribute_length	2
+					constantvalue_index	41		// value = 28474
+				}
+				}
+			}
+			field_info {
+				token	255
+				access_flags	public static final
+				name_index	42		// FID_EF_FDN
+				Descriptor_Index	27		// S
+				attributes_count	1
+				attributes {
+				ConstantValue_attribute {
+					attribute_name_index	28		// ConstantValue
+					attribute_length	2
+					constantvalue_index	43		// value = 28475
+				}
+				}
+			}
+			field_info {
+				token	255
+				access_flags	public static final
+				name_index	44		// FID_EF_SMS
+				Descriptor_Index	27		// S
+				attributes_count	1
+				attributes {
+				ConstantValue_attribute {
+					attribute_name_index	28		// ConstantValue
+					attribute_length	2
+					constantvalue_index	45		// value = 28476
+				}
+				}
+			}
+			field_info {
+				token	255
+				access_flags	public static final
+				name_index	46		// FID_EF_CCP
+				Descriptor_Index	27		// S
+				attributes_count	1
+				attributes {
+				ConstantValue_attribute {
+					attribute_name_index	28		// ConstantValue
+					attribute_length	2
+					constantvalue_index	47		// value = 28477
+				}
+				}
+			}
+			field_info {
+				token	255
+				access_flags	public static final
+				name_index	48		// FID_EF_MSISDN
+				Descriptor_Index	27		// S
+				attributes_count	1
+				attributes {
+				ConstantValue_attribute {
+					attribute_name_index	28		// ConstantValue
+					attribute_length	2
+					constantvalue_index	49		// value = 28480
+				}
+				}
+			}
+			field_info {
+				token	255
+				access_flags	public static final
+				name_index	50		// FID_EF_SMSP
+				Descriptor_Index	27		// S
+				attributes_count	1
+				attributes {
+				ConstantValue_attribute {
+					attribute_name_index	28		// ConstantValue
+					attribute_length	2
+					constantvalue_index	51		// value = 28482
+				}
+				}
+			}
+			field_info {
+				token	255
+				access_flags	public static final
+				name_index	52		// FID_EF_SMSS
+				Descriptor_Index	27		// S
+				attributes_count	1
+				attributes {
+				ConstantValue_attribute {
+					attribute_name_index	28		// ConstantValue
+					attribute_length	2
+					constantvalue_index	53		// value = 28483
+				}
+				}
+			}
+			field_info {
+				token	255
+				access_flags	public static final
+				name_index	54		// FID_EF_LND
+				Descriptor_Index	27		// S
+				attributes_count	1
+				attributes {
+				ConstantValue_attribute {
+					attribute_name_index	28		// ConstantValue
+					attribute_length	2
+					constantvalue_index	55		// value = 28484
+				}
+				}
+			}
+			field_info {
+				token	255
+				access_flags	public static final
+				name_index	56		// FID_EF_SDN
+				Descriptor_Index	27		// S
+				attributes_count	1
+				attributes {
+				ConstantValue_attribute {
+					attribute_name_index	28		// ConstantValue
+					attribute_length	2
+					constantvalue_index	57		// value = 28489
+				}
+				}
+			}
+			field_info {
+				token	255
+				access_flags	public static final
+				name_index	58		// FID_EF_EXT1
+				Descriptor_Index	27		// S
+				attributes_count	1
+				attributes {
+				ConstantValue_attribute {
+					attribute_name_index	28		// ConstantValue
+					attribute_length	2
+					constantvalue_index	59		// value = 28490
+				}
+				}
+			}
+			field_info {
+				token	255
+				access_flags	public static final
+				name_index	60		// FID_EF_EXT2
+				Descriptor_Index	27		// S
+				attributes_count	1
+				attributes {
+				ConstantValue_attribute {
+					attribute_name_index	28		// ConstantValue
+					attribute_length	2
+					constantvalue_index	61		// value = 28491
+				}
+				}
+			}
+			field_info {
+				token	255
+				access_flags	public static final
+				name_index	62		// FID_EF_EXT3
+				Descriptor_Index	27		// S
+				attributes_count	1
+				attributes {
+				ConstantValue_attribute {
+					attribute_name_index	28		// ConstantValue
+					attribute_length	2
+					constantvalue_index	63		// value = 28492
+				}
+				}
+			}
+			field_info {
+				token	255
+				access_flags	public static final
+				name_index	64		// FID_EF_BDN
+				Descriptor_Index	27		// S
+				attributes_count	1
+				attributes {
+				ConstantValue_attribute {
+					attribute_name_index	28		// ConstantValue
+					attribute_length	2
+					constantvalue_index	65		// value = 28493
+				}
+				}
+			}
+			field_info {
+				token	255
+				access_flags	public static final
+				name_index	66		// FID_EF_EXT4
+				Descriptor_Index	27		// S
+				attributes_count	1
+				attributes {
+				ConstantValue_attribute {
+					attribute_name_index	28		// ConstantValue
+					attribute_length	2
+					constantvalue_index	67		// value = 28494
+				}
+				}
+			}
+			field_info {
+				token	255
+				access_flags	public static final
+				name_index	68		// FID_EF_SMSR
+				Descriptor_Index	27		// S
+				attributes_count	1
+				attributes {
+				ConstantValue_attribute {
+					attribute_name_index	28		// ConstantValue
+					attribute_length	2
+					constantvalue_index	69		// value = 28487
+				}
+				}
+			}
+			field_info {
+				token	255
+				access_flags	public static final
+				name_index	70		// FID_EF_IMG
+				Descriptor_Index	27		// S
+				attributes_count	1
+				attributes {
+				ConstantValue_attribute {
+					attribute_name_index	28		// ConstantValue
+					attribute_length	2
+					constantvalue_index	71		// value = 20256
+				}
+				}
+			}
+			field_info {
+				token	255
+				access_flags	public static final
+				name_index	72		// SIMPLE_SEARCH_START_FORWARD
+				Descriptor_Index	73		// B
+				attributes_count	1
+				attributes {
+				ConstantValue_attribute {
+					attribute_name_index	28		// ConstantValue
+					attribute_length	2
+					constantvalue_index	74		// value = 4
+				}
+				}
+			}
+			field_info {
+				token	255
+				access_flags	public static final
+				name_index	75		// SIMPLE_SEARCH_START_BACKWARD
+				Descriptor_Index	73		// B
+				attributes_count	1
+				attributes {
+				ConstantValue_attribute {
+					attribute_name_index	28		// ConstantValue
+					attribute_length	2
+					constantvalue_index	76		// value = 5
+				}
+				}
+			}
+			field_info {
+				token	255
+				access_flags	public static final
+				name_index	77		// ENHANCED_SEARCH
+				Descriptor_Index	73		// B
+				attributes_count	1
+				attributes {
+				ConstantValue_attribute {
+					attribute_name_index	28		// ConstantValue
+					attribute_length	2
+					constantvalue_index	78		// value = 6
+				}
+				}
+			}
+			field_info {
+				token	255
+				access_flags	public static final
+				name_index	79		// SEARCH_INDICATION_START_FORWARD_FROM_NEXT_GR
+				Descriptor_Index	27		// S
+				attributes_count	1
+				attributes {
+				ConstantValue_attribute {
+					attribute_name_index	28		// ConstantValue
+					attribute_length	2
+					constantvalue_index	80		// value = 1024
+				}
+				}
+			}
+			field_info {
+				token	255
+				access_flags	public static final
+				name_index	81		// SEARCH_INDICATION_START_BACKWARD_FROM_PREVIOUS_GR
+				Descriptor_Index	27		// S
+				attributes_count	1
+				attributes {
+				ConstantValue_attribute {
+					attribute_name_index	28		// ConstantValue
+					attribute_length	2
+					constantvalue_index	82		// value = 1280
+				}
+				}
+			}
+			field_info {
+				token	255
+				access_flags	public static final
+				name_index	83		// SEARCH_INDICATION_START_FORWARD_FROM_NEXT
+				Descriptor_Index	27		// S
+				attributes_count	1
+				attributes {
+				ConstantValue_attribute {
+					attribute_name_index	28		// ConstantValue
+					attribute_length	2
+					constantvalue_index	84		// value = 1536
+				}
+				}
+			}
+			field_info {
+				token	255
+				access_flags	public static final
+				name_index	85		// SEARCH_INDICATION_START_BACKWARD_FROM_PREVIOUS
+				Descriptor_Index	27		// S
+				attributes_count	1
+				attributes {
+				ConstantValue_attribute {
+					attribute_name_index	28		// ConstantValue
+					attribute_length	2
+					constantvalue_index	86		// value = 1792
+				}
+				}
+			}
+			field_info {
+				token	255
+				access_flags	public static final
+				name_index	87		// REC_ACC_MODE_CURRENT
+				Descriptor_Index	73		// B
+				attributes_count	1
+				attributes {
+				ConstantValue_attribute {
+					attribute_name_index	28		// ConstantValue
+					attribute_length	2
+					constantvalue_index	74		// value = 4
+				}
+				}
+			}
+			field_info {
+				token	255
+				access_flags	public static final
+				name_index	88		// REC_ACC_MODE_ABSOLUTE
+				Descriptor_Index	73		// B
+				attributes_count	1
+				attributes {
+				ConstantValue_attribute {
+					attribute_name_index	28		// ConstantValue
+					attribute_length	2
+					constantvalue_index	74		// value = 4
+				}
+				}
+			}
+			field_info {
+				token	255
+				access_flags	public static final
+				name_index	89		// REC_ACC_MODE_NEXT
+				Descriptor_Index	73		// B
+				attributes_count	1
+				attributes {
+				ConstantValue_attribute {
+					attribute_name_index	28		// ConstantValue
+					attribute_length	2
+					constantvalue_index	90		// value = 2
+				}
+				}
+			}
+			field_info {
+				token	255
+				access_flags	public static final
+				name_index	91		// REC_ACC_MODE_PREVIOUS
+				Descriptor_Index	73		// B
+				attributes_count	1
+				attributes {
+				ConstantValue_attribute {
+					attribute_name_index	28		// ConstantValue
+					attribute_length	2
+					constantvalue_index	92		// value = 3
+				}
+				}
+			}
+			field_info {
+				token	255
+				access_flags	public static final
+				name_index	93		// TAG_FCP_FILE_DESCRIPTOR
+				Descriptor_Index	73		// B
+				attributes_count	1
+				attributes {
+				ConstantValue_attribute {
+					attribute_name_index	28		// ConstantValue
+					attribute_length	2
+					constantvalue_index	94		// value = -126
+				}
+				}
+			}
+			field_info {
+				token	255
+				access_flags	public static final
+				name_index	95		// TAG_FCP_FILE_IDENTIFIER
+				Descriptor_Index	73		// B
+				attributes_count	1
+				attributes {
+				ConstantValue_attribute {
+					attribute_name_index	28		// ConstantValue
+					attribute_length	2
+					constantvalue_index	96		// value = -125
+				}
+				}
+			}
+			field_info {
+				token	255
+				access_flags	public static final
+				name_index	97		// TAG_FCP_FILE_AID
+				Descriptor_Index	73		// B
+				attributes_count	1
+				attributes {
+				ConstantValue_attribute {
+					attribute_name_index	28		// ConstantValue
+					attribute_length	2
+					constantvalue_index	98		// value = -124
+				}
+				}
+			}
+			field_info {
+				token	255
+				access_flags	public static final
+				name_index	99		// TAG_FCP_FILE_PROPRIETARY_INFO
+				Descriptor_Index	73		// B
+				attributes_count	1
+				attributes {
+				ConstantValue_attribute {
+					attribute_name_index	28		// ConstantValue
+					attribute_length	2
+					constantvalue_index	100		// value = -91
+				}
+				}
+			}
+			field_info {
+				token	255
+				access_flags	public static final
+				name_index	101		// TAG_FCP_LCS_INTEGER
+				Descriptor_Index	73		// B
+				attributes_count	1
+				attributes {
+				ConstantValue_attribute {
+					attribute_name_index	28		// ConstantValue
+					attribute_length	2
+					constantvalue_index	102		// value = -118
+				}
+				}
+			}
+			field_info {
+				token	255
+				access_flags	public static final
+				name_index	103		// TAG_FCP_PIN_STATUS_TEMPLATE_DO
+				Descriptor_Index	73		// B
+				attributes_count	1
+				attributes {
+				ConstantValue_attribute {
+					attribute_name_index	28		// ConstantValue
+					attribute_length	2
+					constantvalue_index	104		// value = -58
+				}
+				}
+			}
+			field_info {
+				token	255
+				access_flags	public static final
+				name_index	105		// TAG_FCP_FILE_SIZE
+				Descriptor_Index	73		// B
+				attributes_count	1
+				attributes {
+				ConstantValue_attribute {
+					attribute_name_index	28		// ConstantValue
+					attribute_length	2
+					constantvalue_index	106		// value = -128
+				}
+				}
+			}
+			field_info {
+				token	255
+				access_flags	public static final
+				name_index	107		// TAG_FCP_TOTAL_FILE_SIZE
+				Descriptor_Index	73		// B
+				attributes_count	1
+				attributes {
+				ConstantValue_attribute {
+					attribute_name_index	28		// ConstantValue
+					attribute_length	2
+					constantvalue_index	108		// value = -127
+				}
+				}
+			}
+			field_info {
+				token	255
+				access_flags	public static final
+				name_index	109		// TAG_FCP_SHORT_FILE_IDENTIFIER
+				Descriptor_Index	73		// B
+				attributes_count	1
+				attributes {
+				ConstantValue_attribute {
+					attribute_name_index	28		// ConstantValue
+					attribute_length	2
+					constantvalue_index	110		// value = -120
+				}
+				}
+			}
+			field_info {
+				token	255
+				access_flags	public static final
+				name_index	111		// TAG_FCP_SECURITY_ATTRIBUTE_CF
+				Descriptor_Index	73		// B
+				attributes_count	1
+				attributes {
+				ConstantValue_attribute {
+					attribute_name_index	28		// ConstantValue
+					attribute_length	2
+					constantvalue_index	112		// value = -116
+				}
+				}
+			}
+			field_info {
+				token	255
+				access_flags	public static final
+				name_index	113		// TAG_FCP_SECURITY_ATTRIBUTE_EF
+				Descriptor_Index	73		// B
+				attributes_count	1
+				attributes {
+				ConstantValue_attribute {
+					attribute_name_index	28		// ConstantValue
+					attribute_length	2
+					constantvalue_index	114		// value = -85
+				}
+				}
+			}
+			field_info {
+				token	255
+				access_flags	public static final
+				name_index	115		// TAG_FCP_SECURITY_ATTRIBUTE_REF_EF
+				Descriptor_Index	73		// B
+				attributes_count	1
+				attributes {
+				ConstantValue_attribute {
+					attribute_name_index	28		// ConstantValue
+					attribute_length	2
+					constantvalue_index	114		// value = -85
+				}
+				}
+			}
+			}
+			export_methods_count	0
+			methods {
+			}
+		}
+		class_info {		// uicc/access/UICCException
+			token	2
+			access_flags	public
+			name_index	147		// uicc/access/UICCException
+			export_supers_count	5
+			supers {
+				constant_pool_index	23		// java/lang/Object
+				constant_pool_index	149		// java/lang/Throwable
+				constant_pool_index	151		// java/lang/Exception
+				constant_pool_index	153		// java/lang/RuntimeException
+				constant_pool_index	155		// javacard/framework/CardRuntimeException
+			}
+			export_interfaces_count	0
+			interfaces {
+			}
+			export_fields_count	13
+			fields {
+			field_info {
+				token	255
+				access_flags	public static final
+				name_index	118		// NO_EF_SELECTED
+				Descriptor_Index	27		// S
+				attributes_count	1
+				attributes {
+				ConstantValue_attribute {
+					attribute_name_index	28		// ConstantValue
+					attribute_length	2
+					constantvalue_index	119		// value = 1
+				}
+				}
+			}
+			field_info {
+				token	255
+				access_flags	public static final
+				name_index	120		// FILE_NOT_FOUND
+				Descriptor_Index	27		// S
+				attributes_count	1
+				attributes {
+				ConstantValue_attribute {
+					attribute_name_index	28		// ConstantValue
+					attribute_length	2
+					constantvalue_index	74		// value = 4
+				}
+				}
+			}
+			field_info {
+				token	255
+				access_flags	public static final
+				name_index	121		// RECORD_NOT_FOUND
+				Descriptor_Index	27		// S
+				attributes_count	1
+				attributes {
+				ConstantValue_attribute {
+					attribute_name_index	28		// ConstantValue
+					attribute_length	2
+					constantvalue_index	122		// value = 9
+				}
+				}
+			}
+			field_info {
+				token	255
+				access_flags	public static final
+				name_index	123		// INTERNAL_ERROR
+				Descriptor_Index	27		// S
+				attributes_count	1
+				attributes {
+				ConstantValue_attribute {
+					attribute_name_index	28		// ConstantValue
+					attribute_length	2
+					constantvalue_index	76		// value = 5
+				}
+				}
+			}
+			field_info {
+				token	255
+				access_flags	public static final
+				name_index	124		// INVALID_MODE
+				Descriptor_Index	27		// S
+				attributes_count	1
+				attributes {
+				ConstantValue_attribute {
+					attribute_name_index	28		// ConstantValue
+					attribute_length	2
+					constantvalue_index	125		// value = 10
+				}
+				}
+			}
+			field_info {
+				token	255
+				access_flags	public static final
+				name_index	126		// OUT_OF_FILE_BOUNDARIES
+				Descriptor_Index	27		// S
+				attributes_count	1
+				attributes {
+				ConstantValue_attribute {
+					attribute_name_index	28		// ConstantValue
+					attribute_length	2
+					constantvalue_index	127		// value = 7
+				}
+				}
+			}
+			field_info {
+				token	255
+				access_flags	public static final
+				name_index	128		// MAX_VALUE_REACHED
+				Descriptor_Index	27		// S
+				attributes_count	1
+				attributes {
+				ConstantValue_attribute {
+					attribute_name_index	28		// ConstantValue
+					attribute_length	2
+					constantvalue_index	129		// value = 12
+				}
+				}
+			}
+			field_info {
+				token	255
+				access_flags	public static final
+				name_index	130		// MEMORY_PROBLEM
+				Descriptor_Index	27		// S
+				attributes_count	1
+				attributes {
+				ConstantValue_attribute {
+					attribute_name_index	28		// ConstantValue
+					attribute_length	2
+					constantvalue_index	131		// value = 13
+				}
+				}
+			}
+			field_info {
+				token	255
+				access_flags	public static final
+				name_index	132		// SECURITY_STATUS_NOT_SATISFIED
+				Descriptor_Index	27		// S
+				attributes_count	1
+				attributes {
+				ConstantValue_attribute {
+					attribute_name_index	28		// ConstantValue
+					attribute_length	2
+					constantvalue_index	92		// value = 3
+				}
+				}
+			}
+			field_info {
+				token	255
+				access_flags	public static final
+				name_index	133		// COMMAND_INCOMPATIBLE
+				Descriptor_Index	27		// S
+				attributes_count	1
+				attributes {
+				ConstantValue_attribute {
+					attribute_name_index	28		// ConstantValue
+					attribute_length	2
+					constantvalue_index	90		// value = 2
+				}
+				}
+			}
+			field_info {
+				token	255
+				access_flags	public static final
+				name_index	134		// OUT_OF_RECORD_BOUNDARIES
+				Descriptor_Index	27		// S
+				attributes_count	1
+				attributes {
+				ConstantValue_attribute {
+					attribute_name_index	28		// ConstantValue
+					attribute_length	2
+					constantvalue_index	135		// value = 8
+				}
+				}
+			}
+			field_info {
+				token	255
+				access_flags	public static final
+				name_index	136		// REF_DATA_INVALIDATED
+				Descriptor_Index	27		// S
+				attributes_count	1
+				attributes {
+				ConstantValue_attribute {
+					attribute_name_index	28		// ConstantValue
+					attribute_length	2
+					constantvalue_index	78		// value = 6
+				}
+				}
+			}
+			field_info {
+				token	255
+				access_flags	public static final
+				name_index	137		// CONDITIONS_OF_USE_NOT_SATISFIED
+				Descriptor_Index	27		// S
+				attributes_count	1
+				attributes {
+				ConstantValue_attribute {
+					attribute_name_index	28		// ConstantValue
+					attribute_length	2
+					constantvalue_index	138		// value = 14
+				}
+				}
+			}
+			}
+			export_methods_count	5
+			methods {
+				method_info {
+					token	0
+					access_flags	public
+					name_index	139		// <init>
+					Descriptor_Index	2		// (S)V
+				}
+				method_info {
+					token	1
+					access_flags	public static
+					name_index	140		// throwIt
+					Descriptor_Index	2		// (S)V
+				}
+				method_info {
+					token	0
+					access_flags	public
+					name_index	141		// equals
+					Descriptor_Index	142		// (Ljava/lang/Object;)Z
+				}
+				method_info {
+					token	1
+					access_flags	public
+					name_index	143		// getReason
+					Descriptor_Index	144		// ()S
+				}
+				method_info {
+					token	2
+					access_flags	public
+					name_index	145		// setReason
+					Descriptor_Index	2		// (S)V
+				}
+			}
+		}
+		class_info {		// uicc/access/UICCSystem
+			token	3
+			access_flags	public
+			name_index	162		// uicc/access/UICCSystem
+			export_supers_count	1
+			supers {
+				constant_pool_index	23		// java/lang/Object
+			}
+			export_interfaces_count	0
+			interfaces {
+			}
+			export_fields_count	0
+			fields {
+			}
+			export_methods_count	4
+			methods {
+				method_info {
+					token	0
+					access_flags	public static
+					name_index	156		// getTheUICCView
+					Descriptor_Index	157		// (B)Luicc/access/FileView;
+				}
+				method_info {
+					token	1
+					access_flags	public static
+					name_index	158		// getTheFileView
+					Descriptor_Index	159		// (Ljavacard/framework/AID;B)Luicc/access/FileView;
+				}
+				method_info {
+					token	2
+					access_flags	public static
+					name_index	158		// getTheFileView
+					Descriptor_Index	160		// ([BSBB)Luicc/access/FileView;
+				}
+				method_info {
+					token	0
+					access_flags	public
+					name_index	141		// equals
+					Descriptor_Index	142		// (Ljava/lang/Object;)Z
+				}
+			}
+		}
+	}
+}

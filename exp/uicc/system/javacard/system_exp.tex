@@ -1,0 +1,210 @@
+export file {		// uicc/system
+	magic	00FACADE		 // in hex
+	minor_version	1
+	major_version	2
+	constant_pool_count	21
+	constant_pool {
+		Constant_Utf8_info {
+			tag	1
+			length	12
+			bytes	EDIT_HANDLER
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	1
+			bytes	B
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	13
+			bytes	ConstantValue
+		}
+		Constant_Integer_info {
+			tag	3
+			bytes	1
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	16
+			bytes	BER_EDIT_HANDLER
+		}
+		Constant_Integer_info {
+			tag	3
+			bytes	2
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	15
+			bytes	buildTLVHandler
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	30
+			bytes	(BS)Luicc/toolkit/ViewHandler;
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	34
+			bytes	(BS[BSS)Luicc/toolkit/ViewHandler;
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	6
+			bytes	equals
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	21
+			bytes	(Ljava/lang/Object;)Z
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	26
+			bytes	uicc/system/HandlerBuilder
+		}
+		Constant_Classref_info {
+			tag	7
+			name_index	11		// uicc/system/HandlerBuilder
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	16
+			bytes	java/lang/Object
+		}
+		Constant_Classref_info {
+			tag	7
+			name_index	13		// java/lang/Object
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	23
+			bytes	getTheVolatileByteArray
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	4
+			bytes	()[B
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	24
+			bytes	uicc/system/UICCPlatform
+		}
+		Constant_Classref_info {
+			tag	7
+			name_index	17		// uicc/system/UICCPlatform
+		}
+		Constant_Utf8_info {
+			tag	1
+			length	11
+			bytes	uicc/system
+		}
+		CONSTANT_Package_info {
+			tag	13
+			flags	1
+			name_index	19		// uicc/system
+			minor_version	0
+			major_version	1
+			aid_length	16
+			aid	0xA0:0x0:0x0:0x0:0x9:0x0:0x5:0xFF:0xFF:0xFF:0xFF:0x89:0x13:0x0:0x0:0x0
+		}
+	}
+	this_package	20
+	export_class_count	2
+	export_classes {
+		class_info {		// uicc/system/HandlerBuilder
+			token	0
+			access_flags	public final
+			name_index	12		// uicc/system/HandlerBuilder
+			export_supers_count	1
+			supers {
+				constant_pool_index	14		// java/lang/Object
+			}
+			export_interfaces_count	0
+			interfaces {
+			}
+			export_fields_count	2
+			fields {
+			field_info {
+				token	255
+				access_flags	public static final
+				name_index	0		// EDIT_HANDLER
+				Descriptor_Index	1		// B
+				attributes_count	1
+				attributes {
+				ConstantValue_attribute {
+					attribute_name_index	2		// ConstantValue
+					attribute_length	2
+					constantvalue_index	3		// value = 1
+				}
+				}
+			}
+			field_info {
+				token	255
+				access_flags	public static final
+				name_index	4		// BER_EDIT_HANDLER
+				Descriptor_Index	1		// B
+				attributes_count	1
+				attributes {
+				ConstantValue_attribute {
+					attribute_name_index	2		// ConstantValue
+					attribute_length	2
+					constantvalue_index	5		// value = 2
+				}
+				}
+			}
+			}
+			export_methods_count	3
+			methods {
+				method_info {
+					token	0
+					access_flags	public static
+					name_index	6		// buildTLVHandler
+					Descriptor_Index	7		// (BS)Luicc/toolkit/ViewHandler;
+				}
+				method_info {
+					token	1
+					access_flags	public static
+					name_index	6		// buildTLVHandler
+					Descriptor_Index	8		// (BS[BSS)Luicc/toolkit/ViewHandler;
+				}
+				method_info {
+					token	0
+					access_flags	public
+					name_index	9		// equals
+					Descriptor_Index	10		// (Ljava/lang/Object;)Z
+				}
+			}
+		}
+		class_info {		// uicc/system/UICCPlatform
+			token	1
+			access_flags	public final
+			name_index	18		// uicc/system/UICCPlatform
+			export_supers_count	1
+			supers {
+				constant_pool_index	14		// java/lang/Object
+			}
+			export_interfaces_count	0
+			interfaces {
+			}
+			export_fields_count	0
+			fields {
+			}
+			export_methods_count	2
+			methods {
+				method_info {
+					token	0
+					access_flags	public static
+					name_index	15		// getTheVolatileByteArray
+					Descriptor_Index	16		// ()[B
+				}
+				method_info {
+					token	0
+					access_flags	public
+					name_index	9		// equals
+					Descriptor_Index	10		// (Ljava/lang/Object;)Z
+				}
+			}
+		}
+	}
+}

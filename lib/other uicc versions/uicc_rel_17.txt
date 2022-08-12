@@ -1,0 +1,684 @@
+Compiled from "FileView.java"
+public interface uicc.access.FileView extends javacard.framework.Shareable {
+  public abstract short select(short, byte[], short, short) throws java.lang.NullPointerException, java.lang.ArrayIndexOutOfBoundsException, uicc.access.UICCException;
+  public abstract void select(short) throws uicc.access.UICCException;
+  public abstract void select(byte) throws uicc.access.UICCException;
+  public abstract short status(byte[], short, short) throws java.lang.NullPointerException, java.lang.ArrayIndexOutOfBoundsException, uicc.access.UICCException;
+  public abstract short readBinary(short, byte[], short, short) throws java.lang.NullPointerException, java.lang.ArrayIndexOutOfBoundsException, uicc.access.UICCException;
+  public abstract void updateBinary(short, byte[], short, short) throws java.lang.NullPointerException, java.lang.ArrayIndexOutOfBoundsException, uicc.access.UICCException;
+  public abstract short readRecord(short, byte, short, byte[], short, short) throws java.lang.NullPointerException, java.lang.ArrayIndexOutOfBoundsException, uicc.access.UICCException;
+  public abstract void updateRecord(short, byte, short, byte[], short, short) throws java.lang.NullPointerException, java.lang.ArrayIndexOutOfBoundsException, uicc.access.UICCException;
+  public abstract short searchRecord(byte, short, short, byte[], short, short, short[], short, short) throws java.lang.NullPointerException, java.lang.ArrayIndexOutOfBoundsException, uicc.access.UICCException;
+  public abstract short increase(byte[], short, short, byte[], short) throws java.lang.NullPointerException, java.lang.ArrayIndexOutOfBoundsException, uicc.access.UICCException;
+  public abstract void deactivateFile() throws uicc.access.UICCException;
+  public abstract void activateFile() throws uicc.access.UICCException;
+}
+Compiled from "UICCConstants.java"
+public interface uicc.access.UICCConstants {
+  public static final short FID_EF_DIR;
+  public static final short FID_EF_ICCID;
+  public static final short FID_EF_ARR;
+  public static final short FID_EF_PL;
+  public static final short FID_DF_TELECOM;
+  public static final short FID_DF_GRAPHICS;
+  public static final short FID_EF_ADN;
+  public static final short FID_EF_FDN;
+  public static final short FID_EF_SMS;
+  public static final short FID_EF_CCP;
+  public static final short FID_EF_MSISDN;
+  public static final short FID_EF_SMSP;
+  public static final short FID_EF_SMSS;
+  public static final short FID_EF_LND;
+  public static final short FID_EF_SDN;
+  public static final short FID_EF_EXT1;
+  public static final short FID_EF_EXT2;
+  public static final short FID_EF_EXT3;
+  public static final short FID_EF_BDN;
+  public static final short FID_EF_EXT4;
+  public static final short FID_EF_SMSR;
+  public static final short FID_EF_IMG;
+  public static final byte SIMPLE_SEARCH_START_FORWARD;
+  public static final byte SIMPLE_SEARCH_START_BACKWARD;
+  public static final byte ENHANCED_SEARCH;
+  public static final short SEARCH_INDICATION_START_FORWARD_FROM_NEXT_GR;
+  public static final short SEARCH_INDICATION_START_BACKWARD_FROM_PREVIOUS_GR;
+  public static final short SEARCH_INDICATION_START_FORWARD_FROM_NEXT;
+  public static final short SEARCH_INDICATION_START_BACKWARD_FROM_PREVIOUS;
+  public static final byte REC_ACC_MODE_CURRENT;
+  public static final byte REC_ACC_MODE_ABSOLUTE;
+  public static final byte REC_ACC_MODE_NEXT;
+  public static final byte REC_ACC_MODE_PREVIOUS;
+  public static final byte BER_TLV_ACC_MODE_FIRST;
+  public static final byte BER_TLV_ACC_MODE_NEXT;
+  public static final byte TAG_FCP_FILE_DESCRIPTOR;
+  public static final byte TAG_FCP_FILE_IDENTIFIER;
+  public static final byte TAG_FCP_FILE_AID;
+  public static final byte TAG_FCP_FILE_PROPRIETARY_INFO;
+  public static final byte TAG_FCP_LCS_INTEGER;
+  public static final byte TAG_FCP_PIN_STATUS_TEMPLATE_DO;
+  public static final byte TAG_FCP_FILE_SIZE;
+  public static final byte TAG_FCP_TOTAL_FILE_SIZE;
+  public static final byte TAG_FCP_SHORT_FILE_IDENTIFIER;
+  public static final byte TAG_FCP_SECURITY_ATTRIBUTE_CF;
+  public static final byte TAG_FCP_SECURITY_ATTRIBUTE_EF;
+  public static final byte TAG_FCP_SECURITY_ATTRIBUTE_REF_EF;
+  public static final byte TAG_FCP_SECURITY_ATTRIBUTE_REFERENCED_EF;
+}
+Compiled from "UICCException.java"
+public class uicc.access.UICCException extends javacard.framework.CardRuntimeException {
+  public static final short NO_EF_SELECTED;
+  public static final short FILE_NOT_FOUND;
+  public static final short RECORD_NOT_FOUND;
+  public static final short INTERNAL_ERROR;
+  public static final short INVALID_MODE;
+  public static final short OUT_OF_FILE_BOUNDARIES;
+  public static final short MAX_VALUE_REACHED;
+  public static final short MEMORY_PROBLEM;
+  public static final short SECURITY_STATUS_NOT_SATISFIED;
+  public static final short COMMAND_INCOMPATIBLE;
+  public static final short OUT_OF_RECORD_BOUNDARIES;
+  public static final short REF_DATA_INVALIDATED;
+  public static final short COMMAND_NOT_ALLOWED;
+  public static final short CONDITIONS_OF_USE_NOT_SATISFIED;
+  public static final short REFERENCED_DATA_NOT_FOUND;
+  public static final short OUT_OF_DATA_BOUNDARIES;
+  public static final short NOT_ENOUGH_MEMORY_SPACE;
+  public static final short INVALID_TAG_VALUE;
+  public uicc.access.UICCException(short);
+  public static void throwIt(short) throws uicc.access.UICCException;
+}
+Compiled from "UICCSystem.java"
+public class uicc.access.UICCSystem {
+  public static uicc.access.FileView getTheUICCView(byte) throws javacard.framework.SystemException;
+  public static uicc.access.FileView getTheFileView(javacard.framework.AID, byte) throws java.lang.NullPointerException, javacard.framework.SystemException;
+  public static uicc.access.FileView getTheFileView(byte[], short, byte, byte) throws java.lang.NullPointerException, java.lang.ArrayIndexOutOfBoundsException, javacard.framework.SystemException;
+}
+Compiled from "AdminBERTLVFileView.java"
+public interface uicc.access.bertlvfile.AdminBERTLVFileView extends uicc.access.bertlvfile.BERTLVFileView,uicc.access.fileadministration.AdminFileView {
+}
+Compiled from "BERTLVFileView.java"
+public interface uicc.access.bertlvfile.BERTLVFileView extends uicc.access.FileView {
+  public abstract int retrieveData(int, int, byte[], short, short);
+  public abstract int getTAGList(byte, int[], short, short);
+  public abstract int setData(int, byte, int, byte[], short, short);
+  public abstract void deleteData(int);
+}
+Compiled from "AdminException.java"
+public class uicc.access.fileadministration.AdminException extends javacard.framework.CardRuntimeException {
+  public static final short INCORRECT_PARAMETERS;
+  public static final short FILE_ALREADY_EXISTS;
+  public static final short CONDITIONS_OF_USE_NOT_SATISFIED;
+  public static final short NOT_ENOUGH_MEMORY_SPACE;
+  public static final short DF_NAME_ALREADY_EXISTS;
+  public uicc.access.fileadministration.AdminException(short);
+  public static void throwIt(short) throws uicc.access.fileadministration.AdminException;
+}
+Compiled from "AdminFileView.java"
+public interface uicc.access.fileadministration.AdminFileView extends uicc.access.FileView {
+  public abstract void deleteFile(short) throws uicc.access.UICCException, javacard.framework.TransactionException;
+  public abstract void createFile(uicc.toolkit.ViewHandler) throws java.lang.NullPointerException, uicc.access.UICCException, uicc.access.fileadministration.AdminException, javacard.framework.TransactionException;
+  public abstract void resizeFile(uicc.toolkit.ViewHandler) throws java.lang.NullPointerException, uicc.access.UICCException, uicc.access.fileadministration.AdminException, javacard.framework.TransactionException;
+}
+Compiled from "AdminFileViewBuilder.java"
+public class uicc.access.fileadministration.AdminFileViewBuilder {
+  public static uicc.access.fileadministration.AdminFileView getTheUICCAdminFileView(byte) throws javacard.framework.SystemException;
+  public static uicc.access.fileadministration.AdminFileView getTheAdminFileView(javacard.framework.AID, byte) throws java.lang.NullPointerException, javacard.framework.SystemException;
+  public static uicc.access.fileadministration.AdminFileView getTheAdminFileView(byte[], short, byte, byte) throws java.lang.NullPointerException, java.lang.ArrayIndexOutOfBoundsException, javacard.framework.SystemException;
+}
+Compiled from "HighUpdateArrayBuilder.java"
+public interface uicc.services.highupdatearray.HighUpdateArrayBuilder extends javacard.framework.Shareable {
+  public static final short HIGH_UPDATE_ARRAY_MIN_UPDATE_JA;
+  public static final short HIGH_UPDATE_ARRAY_MIN_UPDATE_JB;
+  public static final short HIGH_UPDATE_ARRAY_MIN_UPDATE_JC;
+  public abstract boolean[] makeHighUpdateBooleanArray(short);
+  public abstract byte[] makeHighUpdateByteArray(short);
+  public abstract java.lang.Object[] makeHighUpdateObjectArray(short);
+  public abstract short[] makeHighUpdateShortArray(short);
+  public abstract short getHighUpdateMinimumUpdateProperty();
+}
+Compiled from "SuspendConstants.java"
+public interface uicc.suspendresume.SuspendConstants {
+  public static final byte TIME_UNIT_SECONDS;
+  public static final byte TIME_UNIT_MINUTES;
+  public static final byte TIME_UNIT_HOURS;
+  public static final byte TIME_UNIT_DAYS;
+  public static final byte TIME_UNIT_TEN_DAYS;
+  public static final short SUSPEND_REQUEST_REJECTED;
+  public static final short COMPARE_IS_EQUAL;
+  public static final short COMPARE_IS_LOWER;
+  public static final short COMPARE_IS_HIGHER;
+  public static final short COMPARE_IS_NOT_EQUAL;
+}
+Compiled from "SuspendException.java"
+public class uicc.suspendresume.SuspendException extends javacard.framework.CardRuntimeException {
+  public static final short UNEXPECTED_TIME_UNIT;
+  public static final short UNEXPECTED_COMPARE;
+  public static final short UNEXPECTED_OVERFLOW;
+  public uicc.suspendresume.SuspendException(short);
+  public static void throwIt(short) throws uicc.suspendresume.SuspendException;
+}
+Compiled from "SuspendMechanism.java"
+public interface uicc.suspendresume.SuspendMechanism {
+  public abstract short suspendRequest(byte, short, byte, short);
+  public abstract void suspendOperation(byte, short);
+  public abstract void resumeIndication();
+}
+Compiled from "SuspendUtil.java"
+public class uicc.suspendresume.SuspendUtil {
+  uicc.suspendresume.SuspendUtil();
+  public static final boolean timeCompare(byte, short, short, byte, short) throws uicc.suspendresume.SuspendException;
+  public static final short timeToSeconds(byte, short, byte[], short) throws java.lang.ArrayIndexOutOfBoundsException, java.lang.NullPointerException, uicc.suspendresume.SuspendException;
+  public static final short secondsToTime(byte[], short, short) throws java.lang.ArrayIndexOutOfBoundsException, java.lang.NullPointerException, uicc.suspendresume.SuspendException;
+}
+Compiled from "HandlerBuilder.java"
+public final class uicc.system.HandlerBuilder {
+  public static final byte EDIT_HANDLER;
+  public static final byte BER_EDIT_HANDLER;
+  public static uicc.toolkit.ViewHandler buildTLVHandler(byte, short) throws javacard.framework.SystemException;
+  public static uicc.toolkit.ViewHandler buildTLVHandler(byte, short, byte[], short, short) throws java.lang.ArrayIndexOutOfBoundsException, javacard.framework.SystemException, java.lang.NullPointerException, uicc.toolkit.ToolkitException;
+}
+Compiled from "ServiceConstants.java"
+public interface uicc.system.ServiceConstants {
+  public static final short SERVICE_ID_HIGH_UPDATE_ARRAY_BUILDER;
+}
+Compiled from "TerminalCapabilityHandler.java"
+public final class uicc.system.TerminalCapabilityHandler {
+  public static final byte TAG_TERMINAL_POWER_SUPPLY;
+  public static final byte TAG_EXTENDED_LOGICAL_CHANNELS_TERMINAL_SUPPORT;
+  public static final byte TAG_ADDITIONAL_INTERFACE_SUPPORT;
+  public static final byte TAG_EUICC_RELATED_CAPABILITIES;
+  public static uicc.toolkit.BERTLVViewHandler getTheHandler() throws uicc.system.UICCSystemException;
+}
+Compiled from "UICCPlatform.java"
+public final class uicc.system.UICCPlatform {
+  public static byte[] getTheVolatileByteArray();
+}
+Compiled from "UICCSystemException.java"
+public class uicc.system.UICCSystemException extends javacard.framework.CardRuntimeException {
+  public static final short TERMINAL_CAPABILITY_NOT_AVAILABLE;
+  public uicc.system.UICCSystemException(short);
+  public static void throwIt(short) throws uicc.system.UICCSystemException;
+}
+Compiled from "BERTLVEditHandler.java"
+public interface uicc.toolkit.BERTLVEditHandler extends uicc.toolkit.EditHandler,uicc.toolkit.BERTLVViewHandler {
+  public abstract void setTag(byte);
+}
+Compiled from "BERTLVViewHandler.java"
+public interface uicc.toolkit.BERTLVViewHandler extends uicc.toolkit.ViewHandler {
+  public abstract byte getTag();
+  public abstract short getSize();
+}
+Compiled from "EditHandler.java"
+public interface uicc.toolkit.EditHandler extends uicc.toolkit.ViewHandler {
+  public abstract void clear() throws uicc.toolkit.ToolkitException;
+  public abstract void appendArray(byte[], short, short) throws java.lang.NullPointerException, java.lang.ArrayIndexOutOfBoundsException, uicc.toolkit.ToolkitException;
+  public abstract void appendTLV(byte, byte[], short, short) throws java.lang.NullPointerException, java.lang.ArrayIndexOutOfBoundsException, uicc.toolkit.ToolkitException;
+  public abstract void appendTLV(byte, byte) throws uicc.toolkit.ToolkitException;
+  public abstract void appendTLV(byte, short) throws uicc.toolkit.ToolkitException;
+  public abstract void appendTLV(byte, byte, byte) throws uicc.toolkit.ToolkitException;
+  public abstract void appendTLV(byte, byte, short) throws uicc.toolkit.ToolkitException;
+  public abstract void appendTLV(byte, short, short) throws uicc.toolkit.ToolkitException;
+  public abstract void appendTLV(byte, byte, byte[], short, short) throws java.lang.NullPointerException, java.lang.ArrayIndexOutOfBoundsException, uicc.toolkit.ToolkitException;
+  public abstract void appendTLV(byte, byte[], short, short, byte[], short, short) throws java.lang.NullPointerException, java.lang.ArrayIndexOutOfBoundsException, uicc.toolkit.ToolkitException;
+}
+Compiled from "EnvelopeHandler.java"
+public interface uicc.toolkit.EnvelopeHandler extends uicc.toolkit.BERTLVViewHandler {
+  public abstract byte getItemIdentifier() throws uicc.toolkit.ToolkitException;
+  public abstract byte getChannelIdentifier() throws uicc.toolkit.ToolkitException;
+  public abstract short getChannelStatus(byte) throws uicc.toolkit.ToolkitException;
+}
+Compiled from "EnvelopeHandlerSystem.java"
+public final class uicc.toolkit.EnvelopeHandlerSystem {
+  public static uicc.toolkit.EnvelopeHandler getTheHandler() throws uicc.toolkit.ToolkitException;
+}
+Compiled from "EnvelopeResponseHandler.java"
+public interface uicc.toolkit.EnvelopeResponseHandler extends uicc.toolkit.EditHandler {
+  public abstract void post(boolean) throws javacard.framework.APDUException, uicc.toolkit.ToolkitException;
+  public abstract void postAsBERTLV(boolean, byte) throws javacard.framework.APDUException, uicc.toolkit.ToolkitException;
+}
+Compiled from "EnvelopeResponseHandlerSystem.java"
+public final class uicc.toolkit.EnvelopeResponseHandlerSystem {
+  public static uicc.toolkit.EnvelopeResponseHandler getTheHandler() throws uicc.toolkit.ToolkitException;
+}
+Compiled from "ProactiveHandler.java"
+public interface uicc.toolkit.ProactiveHandler extends uicc.toolkit.EditHandler {
+  public abstract void init(byte, byte, byte);
+  public abstract byte send() throws uicc.toolkit.ToolkitException;
+  public abstract void initDisplayText(byte, byte, byte[], short, short) throws java.lang.NullPointerException, java.lang.ArrayIndexOutOfBoundsException, uicc.toolkit.ToolkitException;
+  public abstract void initGetInkey(byte, byte, byte[], short, short) throws java.lang.NullPointerException, java.lang.ArrayIndexOutOfBoundsException, uicc.toolkit.ToolkitException;
+  public abstract void initGetInput(byte, byte, byte[], short, short, short, short) throws java.lang.NullPointerException, java.lang.ArrayIndexOutOfBoundsException, uicc.toolkit.ToolkitException;
+  public abstract void initCloseChannel(byte);
+  public abstract void initMoreTime();
+}
+Compiled from "ProactiveHandlerSystem.java"
+public final class uicc.toolkit.ProactiveHandlerSystem {
+  public static uicc.toolkit.ProactiveHandler getTheHandler() throws uicc.toolkit.ToolkitException;
+}
+Compiled from "ProactiveResponseHandler.java"
+public interface uicc.toolkit.ProactiveResponseHandler extends uicc.toolkit.ViewHandler {
+  public abstract byte getGeneralResult() throws uicc.toolkit.ToolkitException;
+  public abstract short getAdditionalInformationLength() throws uicc.toolkit.ToolkitException;
+  public abstract short copyAdditionalInformation(byte[], short, short) throws java.lang.NullPointerException, java.lang.ArrayIndexOutOfBoundsException, uicc.toolkit.ToolkitException;
+  public abstract byte getItemIdentifier() throws uicc.toolkit.ToolkitException;
+  public abstract short getTextStringLength() throws uicc.toolkit.ToolkitException;
+  public abstract byte getTextStringCodingScheme() throws uicc.toolkit.ToolkitException;
+  public abstract short copyTextString(byte[], short) throws java.lang.NullPointerException, java.lang.ArrayIndexOutOfBoundsException, uicc.toolkit.ToolkitException;
+  public abstract byte getChannelIdentifier() throws uicc.toolkit.ToolkitException;
+  public abstract short getChannelStatus(byte) throws uicc.toolkit.ToolkitException;
+  public abstract short copyChannelData(byte[], short, short) throws java.lang.NullPointerException, java.lang.ArrayIndexOutOfBoundsException, uicc.toolkit.ToolkitException;
+}
+Compiled from "ProactiveResponseHandlerSystem.java"
+public final class uicc.toolkit.ProactiveResponseHandlerSystem {
+  public static uicc.toolkit.ProactiveResponseHandler getTheHandler() throws uicc.toolkit.ToolkitException;
+}
+Compiled from "TerminalProfile.java"
+public final class uicc.toolkit.TerminalProfile {
+  public static final short IDX_PROFILE_DOWNLOAD;
+  public static final short IDX_SMS_PP_DOWNLOAD;
+  public static final short IDX_CELL_BROADCAST_DOWNLOAD;
+  public static final short IDX_MENU_SELECTION;
+  public static final short IDX_TIMER_EXPIRATION;
+  public static final short IDX_CALL_CONTROLL_BY_NAA;
+  public static final short IDX_COMMAND_RESULT;
+  public static final short IDX_UCS2_ENTRY;
+  public static final short IDX_UCS2_DISPLAY;
+  public static final short IDX_DISPLAY_TEXT;
+  public static final short IDX_PROACTIVE_UICC_DISPLAY_TEXT;
+  public static final short IDX_PROACTIVE_UICC_GET_INKEY;
+  public static final short IDX_PROACTIVE_UICC_GET_INPUT;
+  public static final short IDX_PROACTIVE_UICC_MORE_TIME;
+  public static final short IDX_PROACTIVE_UICC_PLAY_TONE;
+  public static final short IDX_PROACTIVE_UICC_POLL_INTERVAL;
+  public static final short IDX_PROACTIVE_UICC_POLLING_OFF;
+  public static final short IDX_PROACTIVE_UICC_REFRESH;
+  public static final short IDX_PROACTIVE_UICC_SELECT_ITEM;
+  public static final short IDX_PROACTIVE_UICC_SEND_SS;
+  public static final short IDX_PROACTIVE_UICC_SET_UP_CALL;
+  public static final short IDX_PROACTIVE_UICC_SET_UP_MENU;
+  public static final short IDX_PROACTIVE_UICC_PROVIDE_LOCAL_INFORMATION_MCC_MNC_LAC_CELLID_IMEI;
+  public static final short IDX_PROACTIVE_UICC_PROVIDE_LOCAL_INFORMATION_NMR;
+  public static final short IDX_PROACTIVE_UICC_SET_UP_EVENT_LIST;
+  public static final short IDX_EVENT_MT_CALL;
+  public static final short IDX_EVENT_CALL_CONNECTED;
+  public static final short IDX_EVENT_CALL_DISCONNECTED;
+  public static final short IDX_EVENT_LOCATION_STATTUS;
+  public static final short IDX_EVENT_USER_ACTIVITY;
+  public static final short IDX_EVENT_IDLE_SCREEN_AVAILABLE;
+  public static final short IDX_EVENT_CARD_READER_STATUS;
+  public static final short IDX_EVENT_LANGUAGAE_SELECTION;
+  public static final short IDX_EVENT_BROWSER_TERMINATION;
+  public static final short IDX_EVENT_DATA_AVAILABLE;
+  public static final short IDX_EVENT_CHANNEL_STATUS;
+  public static final short IDX_EVENT_ACCESS_TECHNOLOGY_CHANGE;
+  public static final short IDX_EVENT_DISPLAY_PARAMETER_CHANGED;
+  public static final short IDX_EVENT_LOCAL_CONNECTION;
+  public static final short IDX_EVENT_NRETWORK_SEARCH_MODE_CHANGE;
+  public static final short IDX_PROACTIVE_UICC_POWER_ON_CARD;
+  public static final short IDX_PROACTIVE_UICC_POWER_OFF_CARD;
+  public static final short IDX_PROACTIVE_UICC_PERFORM_CARD_APDU;
+  public static final short IDX_PROACTIVE_UICC_GET_READER_STATUS_STATUS;
+  public static final short IDX_PROACTIVE_UICC_GET_READER_STATUS_IDENTIFIER;
+  public static final short IDX_PROACTIVE_UICC_TIMER_MANAGEMENT_START_STOP;
+  public static final short IDX_PROACTIVE_UICC_TIMER_MANAGEMENT_CUR_VALUE;
+  public static final short IDX_PROACTIVE_UICC_PROVIDE_LOCAL_INFORMATION_DATE_TIME;
+  public static final short IDX_PROACTIVE_UICC_RUN_AT_COMMAND;
+  public static final short IDX_SETUP_CALL;
+  public static final short IDX_SEND_DTMF;
+  public static final short IDX_PROACTIVE_UICC_PROVIDE_LOCAL_INFORMATION_LANGUAGE;
+  public static final short IDX_PROACTIVE_UICC_PROVIDE_LOCAL_INFORMATION_TIMING;
+  public static final short IDX_PROACTIVE_UICC_LANGUAGE_NOTIFICATION;
+  public static final short IDX_PROACTIVE_UICC_LAUNCH_BROWSER;
+  public static final short IDX_PROACTIVE_UICC_PROVIDE_LOCAL_INFORMATION_ACCESS_TECHNOLOGY;
+  public static final short IDX_SOFT_KEYS_SELECT_ITEM;
+  public static final short IDX_SOFT_KEYS_SET_UP_MENU;
+  public static final short IDX_PROACTIVE_UICC_OPEN_CHANNEL;
+  public static final short IDX_PROACTIVE_UICC_CLOSE_CHANNEL;
+  public static final short IDX_PROACTIVE_UICC_RECEIVE_DATA;
+  public static final short IDX_PROACTIVE_UICC_SEND_DATA;
+  public static final short IDX_PROACTIVE_UICC_GET_CHANNEL_STATUS;
+  public static final short IDX_PROACTIVE_UICC_SERVICE_SEARCH;
+  public static final short IDX_PROACTIVE_UICC_GET_SERVICE_INFORMATION;
+  public static final short IDX_PROACTIVE_UICC_DECLARE_SERVICE;
+  public static final short IDX_CSD;
+  public static final short IDX_GPRS;
+  public static final short IDX_BLUETOOTH;
+  public static final short IDX_IRDA;
+  public static final short IDX_RS232;
+  public static final short IDX_SCREEN_SIZING;
+  public static final short IDX_VARIABLE_SIZE_FONTS;
+  public static final short IDX_DISPLAY_RESIZE;
+  public static final short IDX_TEXT_WRAPPING;
+  public static final short IDX_TEXT_SCROLLING;
+  public static final short IDX_TEXT_ATTRIBUTE;
+  public static final short IDX_TCP;
+  public static final short IDX_UDP;
+  public static final short IDX_PROACTIVE_UICC_DISPLAY_TEXT_VARIABLE_TIMEOUT;
+  public static final short IDX_PROACTIVE_UICC_GET_INKEY_HELP_SUPPORTED;
+  public static final short IDX_USB;
+  public static final short IDX_PROACTIVE_UICC_GET_INKEY_VARIABLE_TIMEOUT;
+  public static final short IDX_PROVIDE_LOCAL_INFORMATION_ESN;
+  public static final short IDX_PROVIDE_LOCAL_INFORMATION_IMEISV;
+  public static final short IDX_PROVIDE_LOCAL_INFORMATION_SEARCH_MODE_CHANGE;
+  public static final short IDX_WML_BROWSER_SUPPORTED;
+  public static final short IDX_XHTML_BROWSER_SUPPORTED;
+  public static final short IDX_HTML_BROWSER_SUPPORTED;
+  public static final short IDX_CHTML_BROWSER_SUPPORTED;
+  public static final short IDX_PROVIDE_LOCAL_INFORMATION_BATTERY_STATE;
+  public static final short IDX_PLAY_TONE_MELODY_THEMED_TONES;
+  public static final short IDX_MULTI_MEDIA_CALL_IN_SET_UP_CALL;
+  public static final short IDX_SET_FRAMES;
+  public static final short IDX_GET_FRAMES_STATUS;
+  public static final short IDX_EVENT_BROWSING_STATUS;
+  public static final short IDX_MULTIPLE_ACCESS_TECHNOLOGIES_SUPPORT;
+  public static final short IDX_ALIGNMENT_LEFT;
+  public static final short IDX_ALIGNMENT_CENTER;
+  public static final short IDX_ALIGNMENT_RIGHT;
+  public static final short IDX_FONT_SIZE_NORMAL;
+  public static final short IDX_FONT_SIZE_LARGE;
+  public static final short IDX_FONT_SIZE_SMALL;
+  public static final short IDX_STYLE_NORMAL;
+  public static final short IDX_STYLE_BOLD;
+  public static final short IDX_STYLE_ITALIC;
+  public static final short IDX_STYLE_UNDERLINED;
+  public static final short IDX_STYLE_STRIKETHROUGH;
+  public static final short IDX_STYLE_TEXT_FOREGROUND_COLOUR;
+  public static final short IDX_STYLE_TEXT_BACKGROUND_COLOUR;
+  public static final short IDX_TERMINAL_APPLICATIONS;
+  public static final short IDX_PROACTIVE_UICC_ACTIVATE;
+  public static final short IDX_PROACTIVE_UICC_PROVIDE_LOCAL_INFORMATION_BROADCAST_NETWORK;
+  public static final short IDX_PROACTIVE_UICC_CONTACTLESS_STATE_CHANGED;
+  public static final short IDX_OPEN_CHANNEL_COFIRMATION_PARAMETER;
+  public static final short IDX_OPEN_CHANNEL_CONFIRMATION_PARAMETER;
+  public static final short IDX_CAT_SUPPORTED;
+  public static final short IDX_CONTAINER_AND_SESSION_CONTROL;
+  public static final short IDX_LAUNCH_PARAMETERS_FOR_OPEN_CHANNEL;
+  public static final short IDX_DIRECT_COMMUNICATION_FOR_OPEN_CHANNEL;
+  public static final short IDX_SECURE_CONTAINER_AND_SESSION_CONTROL;
+  public static final short IDX_REFRESH_ENFORCEMENT_POLICY;
+  public static final short IDX_DNS_SERVER_ADDRESS_OPEN_CHANNEL;
+  public static final short IDX_NETWORK_ACCESS_NAME_REUSE_CLOSE_CHANNEL;
+  public static final short IDX_EVENT_POLL_INTERVAL_NEGOTIATION;
+  public static final short IDX_PROVIDE_LOCAL_INFORMATION_SUPPORTED_RADIO_ACCESS_TECHNOLOGIES;
+  public static final short IDX_REFRESH_eUICC_PROFILE_STATE_CHANGE;
+  public static final short IDX_REFRESH_eUICC_PROFILE_OPERATION;
+  public static final short IDX_GET_INPUT_VARIABLE_TIMEOUT;
+  public static boolean check(byte) throws uicc.toolkit.ToolkitException;
+  public static boolean check(byte[], short, short) throws java.lang.NullPointerException, java.lang.ArrayIndexOutOfBoundsException, uicc.toolkit.ToolkitException;
+  public static boolean check(short) throws uicc.toolkit.ToolkitException;
+  public static short getValue(short, short) throws uicc.toolkit.ToolkitException;
+  public static short copy(short, byte[], short, short) throws java.lang.ArrayIndexOutOfBoundsException, java.lang.NullPointerException, uicc.toolkit.ToolkitException;
+}
+Compiled from "ToolkitConstants.java"
+public interface uicc.toolkit.ToolkitConstants {
+  public static final short EVENT_PROFILE_DOWNLOAD;
+  public static final short EVENT_MENU_SELECTION;
+  public static final short EVENT_MENU_SELECTION_HELP_REQUEST;
+  public static final short EVENT_CALL_CONTROL_BY_NAA;
+  public static final short EVENT_TIMER_EXPIRATION;
+  public static final short EVENT_EVENT_DOWNLOAD_MT_CALL;
+  public static final short EVENT_EVENT_DOWNLOAD_CALL_CONNECTED;
+  public static final short EVENT_EVENT_DOWNLOAD_CALL_DISCONNECTED;
+  public static final short EVENT_EVENT_DOWNLOAD_LOCATION_STATUS;
+  public static final short EVENT_EVENT_DOWNLOAD_USER_ACTIVITY;
+  public static final short EVENT_EVENT_DOWNLOAD_IDLE_SCREEN_AVAILABLE;
+  public static final short EVENT_EVENT_DOWNLOAD_CARD_READER_STATUS;
+  public static final short EVENT_STATUS_COMMAND;
+  public static final short EVENT_EVENT_DOWNLOAD_LANGUAGE_SELECTION;
+  public static final short EVENT_EVENT_DOWNLOAD_BROWSER_TERMINATION;
+  public static final short EVENT_EVENT_DOWNLOAD_DATA_AVAILABLE;
+  public static final short EVENT_EVENT_DOWNLOAD_CHANNEL_STATUS;
+  public static final short EVENT_EVENT_DOWNLOAD_ACCESS_TECHNOLOGY_CHANGE;
+  public static final short EVENT_EVENT_DOWNLOAD_DISPLAY_PARAMETER_CHANGED;
+  public static final short EVENT_EVENT_DOWNLOAD_LOCAL_CONNECTION;
+  public static final short EVENT_EVENT_DOWNLOAD_NETWORK_SEARCH_MODE_CHANGE;
+  public static final short EVENT_EVENT_BROWSING_STATUS;
+  public static final short EVENT_EVENT_DOWNLOAD_HCI_CONNECTIVITY;
+  public static final short EVENT_EVENT_DOWNLOAD_FRAMES_INFORMATION_CHANGED;
+  public static final short EVENT_EVENT_DOWNLOAD_CONTACTLESS_STATE_REQUEST;
+  public static final short EVENT_EVENT_POLL_INTERVAL_NEGOTIATION;
+  public static final short EVENT_PROACTIVE_HANDLER_AVAILABLE;
+  public static final short EVENT_EXTERNAL_FILE_UPDATE;
+  public static final short EVENT_REMOTE_FILE_UPDATE;
+  public static final short EVENT_APPLICATION_DESELECT;
+  public static final short EVENT_FIRST_COMMAND_AFTER_ATR;
+  public static final short EVENT_EVENT_DOWNLOAD_ACCESS_TECHNOLOGY_CHANGE_MULTIPLE;
+  public static final short EVENT_MEMORY_FAILURE;
+  public static final short EVENT_TERMINAL_APPLICATIONS;
+  public static final short EVENT_TERMINAL_CAPABILITY;
+  public static final short EVENT_UNRECOGNIZED_ENVELOPE;
+  public static final byte BTAG_PROACTIVE_UICC_COMMAND;
+  public static final byte BTAG_MENU_SELECTION;
+  public static final byte BTAG_CALL_CONTROL;
+  public static final byte BTAG_EVENT_DOWNLOAD;
+  public static final byte BTAG_TIMER_EXPIRATION;
+  public static final byte TAG_COMMAND_DETAILS;
+  public static final byte TAG_DEVICE_IDENTITIES;
+  public static final byte TAG_RESULT;
+  public static final byte TAG_DURATION;
+  public static final byte TAG_ALPHA_IDENTIFIER;
+  public static final byte TAG_ADDRESS;
+  public static final byte TAG_CAPABILITY_CONFIGURATION_PARAMETERS;
+  public static final byte TAG_CALLED_PARTY_SUBADDRESS;
+  public static final byte TAG_TEXT_STRING;
+  public static final byte TAG_TONE;
+  public static final byte TAG_ITEM;
+  public static final byte TAG_ITEM_IDENTIFIER;
+  public static final byte TAG_RESPONSE_LENGTH;
+  public static final byte TAG_FILE_LIST;
+  public static final byte TAG_LOCATION_INFORMATION;
+  public static final byte TAG_IMEI;
+  public static final byte TAG_HELP_REQUEST;
+  public static final byte TAG_NETWORK_MEASUREMENT_RESULTS;
+  public static final byte TAG_DEFAULT_TEXT;
+  public static final byte TAG_ITEMS_NEXT_ACTION_INDICATOR;
+  public static final byte TAG_EVENT_LIST;
+  public static final byte TAG_LOCATION_STATUS;
+  public static final byte TAG_ICON_IDENTIFIER;
+  public static final byte TAG_ITEM_ICON_IDENTIFIER_LIST;
+  public static final byte TAG_CARD_READER_STATUS;
+  public static final byte TAG_CARD_ATR;
+  public static final byte TAG_C_APDU;
+  public static final byte TAG_R_APDU;
+  public static final byte TAG_TIMER_IDENTIFIER;
+  public static final byte TAG_TIMER_VALUE;
+  public static final byte TAG_DATE_TIME_AND_TIME_ZONE;
+  public static final byte TAG_CALL_CONTROL_REQUESTED_ACTION;
+  public static final byte TAG_AT_COMMAND;
+  public static final byte TAG_AT_RESPONSE;
+  public static final byte TAG_IMMEDIATE_RESPONSE;
+  public static final byte TAG_DTMF_STRING;
+  public static final byte TAG_LANGUAGE;
+  public static final byte TAG_AID;
+  public static final byte TAG_BROWSER_IDENTITY;
+  public static final byte TAG_URL;
+  public static final byte TAG_URI;
+  public static final byte TAG_BEARER;
+  public static final byte TAG_PROVISION_REFERENCE_FILE;
+  public static final byte TAG_BROWSER_TERMINATION;
+  public static final byte TAG_SUPPORTED_RADIO_ACCESS_TECHNOLOGIES;
+  public static final byte TAG_BEARER_DESCRIPTION;
+  public static final byte TAG_CHANNEL_DATA;
+  public static final byte TAG_CHANNEL_DATA_LENGTH;
+  public static final byte TAG_CHANNEL_DATA_STATUS;
+  public static final byte TAG_BUFFER_SIZE;
+  public static final byte TAG_CARD_READER_ID;
+  public static final byte TAG_UICC_TERMINAL_TRANSPORT_LEVEL;
+  public static final byte TAG_OTHER_DATA_DESTINATION_ADDRESS;
+  public static final byte TAG_ACCESS_TECHNOLOGY;
+  public static final byte TAG_DISPLAY_PARAMETERS;
+  public static final byte TAG_DNS_SERVER_ADDRESS;
+  public static final byte TAG_SERVICE_RECORD;
+  public static final byte TAG_DEVICE_FILTER;
+  public static final byte TAG_SERVICE_SEARCH;
+  public static final byte TAG_ATTRIBUTE_INFORMATION;
+  public static final byte TAG_SERVICE_AVAILABILITY;
+  public static final byte TAG_ESN;
+  public static final byte TAG_NETWORK_ACCESS_NAME;
+  public static final byte TAG_REMOTE_ENTITY_ADDRESS;
+  public static final byte TAG_TEXT_ATTRIBUTE_TAG;
+  public static final byte TAG_ITEM_TEXT_ATTRIBUTE_LIST;
+  public static final byte TAG_CONTACTLESS_STATE_REQUEST;
+  public static final byte TAG_IMEISV;
+  public static final byte TAG_BATTERY_STATE;
+  public static final byte TAG_BROWSING_STATUS;
+  public static final byte TAG_NETWORK_SEARCH_MODE;
+  public static final byte TAG_SET_CR;
+  public static final byte TAG_SET_NO_CR;
+  public static final byte TLV_LENGTH_CODED_2BYTES;
+  public static final byte TLV_NOT_FOUND;
+  public static final byte TLV_FOUND_CR_SET;
+  public static final byte TLV_FOUND_CR_NOT_SET;
+  public static final byte PRO_CMD_REFRESH;
+  public static final byte PRO_CMD_MORE_TIME;
+  public static final byte PRO_CMD_SET_UP_CALL;
+  public static final byte PRO_CMD_SEND_SHORT_MESSAGE;
+  public static final byte PRO_CMD_SEND_DTMF;
+  public static final byte PRO_CMD_LAUNCH_BROWSER;
+  public static final byte PRO_CMD_PLAY_TONE;
+  public static final byte PRO_CMD_DISPLAY_TEXT;
+  public static final byte PRO_CMD_GET_INKEY;
+  public static final byte PRO_CMD_GET_INPUT;
+  public static final byte PRO_CMD_SELECT_ITEM;
+  public static final byte PRO_CMD_PROVIDE_LOCAL_INFORMATION;
+  public static final byte PRO_CMD_TIMER_MANAGEMENT;
+  public static final byte PRO_CMD_SET_UP_IDLE_MODE_TEXT;
+  public static final byte PRO_CMD_PERFORM_CARD_APDU;
+  public static final byte PRO_CMD_POWER_ON_CARD;
+  public static final byte PRO_CMD_POWER_OFF_CARD;
+  public static final byte PRO_CMD_GET_READER_STATUS;
+  public static final byte PRO_CMD_RUN_AT_COMMAND;
+  public static final byte PRO_CMD_LANGUAGE_NOTIFICATION;
+  public static final byte PRO_CMD_OPEN_CHANNEL;
+  public static final byte PRO_CMD_CLOSE_CHANNEL;
+  public static final byte PRO_CMD_RECEIVE_DATA;
+  public static final byte PRO_CMD_SEND_DATA;
+  public static final byte PRO_CMD_GET_CHANNEL_STATUS;
+  public static final byte PRO_CMD_SERVICE_SEARCH;
+  public static final byte PRO_CMD_GET_SERVICE_INFORMATION;
+  public static final byte PRO_CMD_DECLARE_SERVICE;
+  public static final byte PRO_CMD_ACTIVATE;
+  public static final byte PRO_CMD_CONTACTLESS_STATE_CHANGED;
+  public static final byte DEV_ID_KEYPAD;
+  public static final byte DEV_ID_DISPLAY;
+  public static final byte DEV_ID_EARPIECE;
+  public static final byte DEV_ID_ADDITIONAL_CARD_READER_0;
+  public static final byte DEV_ID_ADDITIONAL_CARD_READER_1;
+  public static final byte DEV_ID_ADDITIONAL_CARD_READER_2;
+  public static final byte DEV_ID_ADDITIONAL_CARD_READER_3;
+  public static final byte DEV_ID_ADDITIONAL_CARD_READER_4;
+  public static final byte DEV_ID_ADDITIONAL_CARD_READER_5;
+  public static final byte DEV_ID_ADDITIONAL_CARD_READER_6;
+  public static final byte DEV_ID_ADDITIONAL_CARD_READER_7;
+  public static final byte DEV_ID_CHANNEL_BASE;
+  public static final byte DEV_ID_CHANNEL_1;
+  public static final byte DEV_ID_CHANNEL_2;
+  public static final byte DEV_ID_CHANNEL_3;
+  public static final byte DEV_ID_CHANNEL_4;
+  public static final byte DEV_ID_CHANNEL_5;
+  public static final byte DEV_ID_CHANNEL_6;
+  public static final byte DEV_ID_CHANNEL_7;
+  public static final byte DEV_ID_UICC;
+  public static final byte DEV_ID_TERMINAL;
+  public static final byte DEV_ID_NETWORK;
+  public static final byte POLL_NO_DURATION;
+  public static final byte POLL_SYSTEM_DURATION;
+  public static final byte RES_CMD_PERF;
+  public static final byte RES_CMD_PERF_PARTIAL_COMPR;
+  public static final byte RES_CMD_PERF_MISSING_INFO;
+  public static final byte RES_CMD_PERF_REFRESH_ADD_EF_READ;
+  public static final byte RES_CMD_PERF_REQ_ICON_NOT_DISP;
+  public static final byte RES_CMD_PERF_MODIF_CC_NAA;
+  public static final byte RES_CMD_PERF_LIMITED_SERVICE;
+  public static final byte RES_CMD_PERF_WITH_MODIFICATION;
+  public static final byte RES_REFRESH_PERF_NO_NAA_ACTIVE;
+  public static final byte RES_CMD_PERF_SESSION_TERM_USER;
+  public static final byte RES_CMD_PERF_BACKWARD_MOVE_REQ;
+  public static final byte RES_CMD_PERF_NO_RESP_FROM_USER;
+  public static final byte RES_CMD_PERF_HELP_INFO_REQ;
+  public static final byte RES_TEMP_PB_TERMINAL_UNABLE_PROC;
+  public static final byte RES_TEMP_PB_SESSION_TERM_USER;
+  public static final byte RES_TEMP_PB_USER_REJECT_CALL_REQ;
+  public static final byte RES_TEMP_PB_USER_CLEAR_CALL;
+  public static final byte RES_TEMP_PB_IN_CONTR_TIMER_STATE;
+  public static final byte RES_TEMP_PB_INTERACT_CC_BY_NAA;
+  public static final byte RES_ERROR_LAUNCH_BROWSE_GENERIC_CODE;
+  public static final byte RES_ERROR_CMD_BEYOND_TERMINAL_CAPAB;
+  public static final byte RES_ERROR_CMD_TYP_NOT_UNDERSTOOD;
+  public static final byte RES_ERROR_CMD_DATA_NOT_UNDERSTOOD;
+  public static final byte RES_ERROR_CMD_NUMBER_NOT_KNOWN;
+  public static final byte RES_ERROR_REQ_VALUES_MISS;
+  public static final byte RES_ERROR_MULTIPLE_CARD_ERROR;
+  public static final byte RES_ERROR_INTERACT_CC_SMSMO_BY_NAA;
+  public static final byte RES_ERROR_BEARER_INDEPENDENT_PROTOCOL_ERROR;
+  public static final byte RES_ERROR_ACCESS_TECH_ERROR;
+}
+Compiled from "ToolkitException.java"
+public class uicc.toolkit.ToolkitException extends javacard.framework.CardRuntimeException {
+  public static final short HANDLER_OVERFLOW;
+  public static final short HANDLER_NOT_AVAILABLE;
+  public static final short UNAVAILABLE_ELEMENT;
+  public static final short MENU_ENTRY_NOT_FOUND;
+  public static final short REGISTRY_ERROR;
+  public static final short EVENT_NOT_SUPPORTED;
+  public static final short EVENT_ALREADY_REGISTERED;
+  public static final short OUT_OF_TLV_BOUNDARIES;
+  public static final short TERMINAL_PROFILE_NOT_AVAILABLE;
+  public static final short ALLOWED_LENGTH_EXCEEDED;
+  public static final short NO_TIMER_AVAILABLE;
+  public static final short INVALID_TIMER_ID;
+  public static final short EVENT_NOT_ALLOWED;
+  public static final short BAD_INPUT_PARAMETER;
+  public static final short COMMAND_NOT_ALLOWED;
+  public static final short NO_SERVICE_ID_AVAILABLE;
+  public static final short INVALID_SERVICE_ID;
+  public static final short TAR_NOT_DEFINED;
+  public uicc.toolkit.ToolkitException(short);
+  public static void throwIt(short) throws uicc.toolkit.ToolkitException;
+}
+Compiled from "ToolkitInterface.java"
+public interface uicc.toolkit.ToolkitInterface extends javacard.framework.Shareable {
+  public abstract void processToolkit(short) throws uicc.toolkit.ToolkitException;
+}
+Compiled from "ToolkitRegistry.java"
+public interface uicc.toolkit.ToolkitRegistry {
+  public abstract void setEvent(short) throws uicc.toolkit.ToolkitException, javacard.framework.TransactionException;
+  public abstract void setEventList(short[], short, short) throws java.lang.NullPointerException, java.lang.ArrayIndexOutOfBoundsException, uicc.toolkit.ToolkitException, javacard.framework.TransactionException;
+  public abstract void clearEvent(short) throws uicc.toolkit.ToolkitException, javacard.framework.TransactionException;
+  public abstract boolean isEventSet(short);
+  public abstract void disableMenuEntry(byte) throws uicc.toolkit.ToolkitException, javacard.framework.TransactionException;
+  public abstract void enableMenuEntry(byte) throws uicc.toolkit.ToolkitException, javacard.framework.TransactionException;
+  public abstract byte initMenuEntry(byte[], short, short, byte, boolean, byte, short) throws java.lang.NullPointerException, java.lang.ArrayIndexOutOfBoundsException, uicc.toolkit.ToolkitException, javacard.framework.TransactionException;
+  public abstract void changeMenuEntry(byte, byte[], short, short, byte, boolean, byte, short) throws java.lang.NullPointerException, java.lang.ArrayIndexOutOfBoundsException, uicc.toolkit.ToolkitException, javacard.framework.TransactionException;
+  public abstract byte allocateTimer() throws uicc.toolkit.ToolkitException, javacard.framework.TransactionException;
+  public abstract void releaseTimer(byte) throws uicc.toolkit.ToolkitException, javacard.framework.TransactionException;
+  public abstract void requestPollInterval(short) throws uicc.toolkit.ToolkitException, javacard.framework.TransactionException;
+  public abstract short getPollInterval();
+  public abstract byte allocateServiceIdentifier() throws uicc.toolkit.ToolkitException, javacard.framework.TransactionException;
+  public abstract void releaseServiceIdentifier(byte) throws uicc.toolkit.ToolkitException, javacard.framework.TransactionException;
+  public abstract void registerFileEvent(short, byte[], short, short, byte[], short, byte) throws uicc.toolkit.ToolkitException, java.lang.NullPointerException, java.lang.ArrayIndexOutOfBoundsException, javacard.framework.TransactionException, javacard.framework.SystemException;
+  public abstract void deregisterFileEvent(short, byte[], short, short, byte[], short, byte) throws uicc.toolkit.ToolkitException, java.lang.NullPointerException, java.lang.ArrayIndexOutOfBoundsException, javacard.framework.TransactionException, javacard.framework.SystemException;
+  public abstract void registerFileEvent(short, uicc.access.FileView) throws uicc.toolkit.ToolkitException, java.lang.NullPointerException, javacard.framework.TransactionException;
+  public abstract void deregisterFileEvent(short, uicc.access.FileView) throws uicc.toolkit.ToolkitException, java.lang.NullPointerException, javacard.framework.TransactionException;
+  public abstract void setMenuEntryTextAttribute(byte, byte[], short, short) throws java.lang.NullPointerException, java.lang.ArrayIndexOutOfBoundsException, uicc.toolkit.ToolkitException, javacard.framework.TransactionException;
+}
+Compiled from "ToolkitRegistrySystem.java"
+public final class uicc.toolkit.ToolkitRegistrySystem {
+  public static uicc.toolkit.ToolkitRegistry getEntry() throws uicc.toolkit.ToolkitException;
+  public static boolean isPrioritizedProactiveHandlerAvailableEventSet();
+}
+Compiled from "ViewHandler.java"
+public interface uicc.toolkit.ViewHandler {
+  public abstract short getLength() throws uicc.toolkit.ToolkitException;
+  public abstract short copy(byte[], short, short) throws java.lang.NullPointerException, java.lang.ArrayIndexOutOfBoundsException, uicc.toolkit.ToolkitException;
+  public abstract byte findTLV(byte, byte) throws uicc.toolkit.ToolkitException;
+  public abstract short getValueLength() throws uicc.toolkit.ToolkitException;
+  public abstract byte getValueByte(short) throws uicc.toolkit.ToolkitException;
+  public abstract short getValueShort(short) throws uicc.toolkit.ToolkitException;
+  public abstract short copyValue(short, byte[], short, short) throws java.lang.NullPointerException, java.lang.ArrayIndexOutOfBoundsException, uicc.toolkit.ToolkitException;
+  public abstract byte compareValue(short, byte[], short, short) throws java.lang.NullPointerException, java.lang.ArrayIndexOutOfBoundsException, uicc.toolkit.ToolkitException;
+  public abstract short findAndCopyValue(byte, byte[], short) throws java.lang.NullPointerException, java.lang.ArrayIndexOutOfBoundsException, uicc.toolkit.ToolkitException;
+  public abstract short findAndCopyValue(byte, byte, short, byte[], short, short) throws java.lang.NullPointerException, java.lang.ArrayIndexOutOfBoundsException, uicc.toolkit.ToolkitException;
+  public abstract byte findAndCompareValue(byte, byte[], short) throws java.lang.NullPointerException, java.lang.ArrayIndexOutOfBoundsException, uicc.toolkit.ToolkitException;
+  public abstract byte findAndCompareValue(byte, byte, short, byte[], short, short) throws java.lang.NullPointerException, java.lang.ArrayIndexOutOfBoundsException, uicc.toolkit.ToolkitException;
+  public abstract short getCapacity() throws uicc.toolkit.ToolkitException;
+}
