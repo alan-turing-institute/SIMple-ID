@@ -1,0 +1,952 @@
+// converted by version  [v3.0.4]
+// on Fri Apr 08 15:54:59 BST 2022
+
+.package QRSTK {
+	.aid 0xA0:0x0:0x0:0x0:0x0:0x1:0x2:0x3:0x8:0x0:0x0;
+	.version 1.0;
+
+	.imports {
+		0xA0:0x0:0x0:0x0:0x62:0x0:0x1 1.0;		//java/lang
+		0xA0:0x0:0x0:0x0:0x62:0x1:0x2 1.5;		//javacard/security
+		0xA0:0x0:0x0:0x0:0x62:0x1:0x1 1.5;		//javacard/framework
+		0xA0:0x0:0x0:0x0:0x9:0x0:0x5:0xFF:0xFF:0xFF:0xFF:0x89:0x12:0x0:0x0:0x0 1.0;		//uicc/toolkit
+		0xA0:0x0:0x0:0x0:0x9:0x0:0x5:0xFF:0xFF:0xFF:0xFF:0x89:0x11:0x1:0x0:0x0 1.0;		//uicc/access/fileadministration
+		0xA0:0x0:0x0:0x0:0x9:0x0:0x5:0xFF:0xFF:0xFF:0xFF:0x89:0x11:0x0:0x0:0x0 1.0;		//uicc/access
+		0xA0:0x0:0x0:0x0:0x9:0x0:0x5:0xFF:0xFF:0xFF:0xFF:0x89:0x13:0x0:0x0:0x0 1.0;		//uicc/system
+	}
+
+	.applet {
+		0xA0:0x0:0x0:0x0:0x0:0x1:0x2:0x3:0x8:0x1:0x0 QRSTK;
+	}
+
+	.constantPool {
+		// 0
+		instanceFieldRef byte[] QRSTK/ef_img_record;
+		// 1
+		instanceFieldRef Crypto QRSTK/crypto;
+		// 2
+		instanceFieldRef byte QRSTK/menuItem_QR_Fast;
+		// 3
+		instanceFieldRef byte QRSTK/cryptoMenu;
+		// 4
+		instanceFieldRef 4.0 QRSTK/fvEF_DF_TELECOM;
+		// 5
+		instanceFieldRef 5.0 QRSTK/fvEF_SUME;
+		// 6
+		instanceFieldRef 5.0 QRSTK/fvEF_RAW_ICON;
+		// 7
+		instanceFieldRef byte QRSTK/menuItem1;
+		// 8
+		instanceFieldRef 3.2 QRSTK/editHandler;
+		// 9
+		staticMethodRef 1.16.0(BS)V;		// javacard/security/KeyPair.<init>(BS)V
+		// 10
+		staticFieldRef 1.16 Crypto/m_keyPair;
+		// 11
+		virtualMethodRef 1.16.1()V;		// genKeyPair()V
+		// 12
+		virtualMethodRef 1.16.3()Ljavacard/security/PublicKey;;		// getPublic()Ljavacard/security/PublicKey;
+			.descriptor	Ljavacard/security/PublicKey;	1.3;
+
+		// 13
+		virtualMethodRef 1.16.2()Ljavacard/security/PrivateKey;;		// getPrivate()Ljavacard/security/PrivateKey;
+			.descriptor	Ljavacard/security/PrivateKey;	1.2;
+
+		// 14
+		staticMethodRef 2.8.13(SB)[B;		// javacard/framework/JCSystem.makeTransientByteArray(SB)[B
+		// 15
+		staticFieldRef byte[] Crypto/signArray;
+		// 16
+		staticMethodRef 1.15.0(BZ)Ljavacard/security/Signature;;		// javacard/security/Signature.getInstance(BZ)Ljavacard/security/Signature;
+			.descriptor	Ljavacard/security/Signature;	1.15;
+
+		// 17
+		staticFieldRef 1.15 Crypto/m_sign;
+		// 18
+		virtualMethodRef 1.15.3(Ljavacard/security/Key;B)V;		// init(Ljavacard/security/Key;B)V
+			.descriptor	Ljavacard/security/Key;	1.0;
+
+		// 19
+		virtualMethodRef 1.14.1([BSS)V;		// generateData([BSS)V
+		// 20
+		virtualMethodRef 1.15.5([BSS[BS)S;		// sign([BSS[BS)S
+		// 21
+		staticFieldRef byte[] Crypto/otp;
+		// 22
+		staticMethodRef 2.3.0()V;		// javacard/framework/Applet.<init>()V
+		// 23
+		staticMethodRef 0.0.0()V;		// java/lang/Object.<init>()V
+		// 24
+		virtualMethodRef 2.3.1()V;		// register()V
+		// 25
+		virtualMethodRef 2.3.2([BSB)V;		// register([BSB)V
+		// 26
+		.classRef Crypto;
+		// 27
+		staticMethodRef Crypto/<init>()V;
+		// 28
+		.classRef 1.12;		// javacard/security/CryptoException
+		// 29
+		virtualMethodRef QRSTK/initToolkit()V;
+		// 30
+		staticMethodRef 3.16.0()Luicc/toolkit/ToolkitRegistry;;		// uicc/toolkit/ToolkitRegistrySystem.getEntry()Luicc/toolkit/ToolkitRegistry;
+			.descriptor	Luicc/toolkit/ToolkitRegistry;	3.9;
+
+		// 31
+		staticFieldRef 3.9 QRSTK/tkRegistry;
+		// 32
+		staticFieldRef byte[] QRSTK/menuQRFastTitle;
+		// 33
+		.classRef 3.9;		// uicc/toolkit/ToolkitRegistry
+		// 34
+		staticMethodRef 1.14.0(B)Ljavacard/security/RandomData;;		// javacard/security/RandomData.getInstance(B)Ljavacard/security/RandomData;
+			.descriptor	Ljavacard/security/RandomData;	1.14;
+
+		// 35
+		staticFieldRef byte[] QRSTK/menuCryptoTitle;
+		// 36
+		staticFieldRef 1.14 Crypto/m_rngRandom;
+		// 37
+		staticMethodRef 4.2.0(B)Luicc/access/fileadministration/AdminFileView;;		// uicc/access/fileadministration/AdminFileViewBuilder.getTheUICCAdminFileView(B)Luicc/access/fileadministration/AdminFileView;
+			.descriptor	Luicc/access/fileadministration/AdminFileView;	4.0;
+
+		// 38
+		staticMethodRef 1.13.0(BSZ)Ljavacard/security/Key;;		// javacard/security/KeyBuilder.buildKey(BSZ)Ljavacard/security/Key;
+			.descriptor	Ljavacard/security/Key;	1.0;
+
+		// 39
+		staticMethodRef 5.3.0(B)Luicc/access/FileView;;		// uicc/access/UICCSystem.getTheUICCView(B)Luicc/access/FileView;
+			.descriptor	Luicc/access/FileView;	5.0;
+
+		// 40
+		staticFieldRef 1.0 Crypto/m_privateKey;
+		// 41
+		staticFieldRef 1.0 Crypto/m_publicKey;
+		// 42
+		.classRef 5.0;		// uicc/access/FileView
+		// 43
+		.classRef 4.0;		// uicc/access/fileadministration/AdminFileView
+		// 44
+		.classRef QRSTK;
+		// 45
+		staticMethodRef QRSTK/<init>([BSB)V;
+		// 46
+		virtualMethodRef 2.3.3()Z;		// selectingApplet()Z
+		// 47
+		.classRef 5.2;		// uicc/access/UICCException
+		// 48
+		.classRef 0.5;		// java/lang/ArrayIndexOutOfBoundsException
+		// 49
+		.classRef 0.7;		// java/lang/NullPointerException
+		// 50
+		staticMethodRef 3.14.0()Luicc/toolkit/ProactiveHandler;;		// uicc/toolkit/ProactiveHandlerSystem.getTheHandler()Luicc/toolkit/ProactiveHandler;
+			.descriptor	Luicc/toolkit/ProactiveHandler;	3.5;
+
+		// 51
+		staticMethodRef 3.12.0()Luicc/toolkit/EnvelopeHandler;;		// uicc/toolkit/EnvelopeHandlerSystem.getTheHandler()Luicc/toolkit/EnvelopeHandler;
+			.descriptor	Luicc/toolkit/EnvelopeHandler;	3.3;
+
+		// 52
+		.classRef 3.3;		// uicc/toolkit/EnvelopeHandler
+		// 53
+		.classRef 1.16;		// javacard/security/KeyPair
+		// 54
+		staticFieldRef byte[] QRSTK/insertNewTitle_text;
+		// 55
+		.classRef 3.5;		// uicc/toolkit/ProactiveHandler
+		// 56
+		staticMethodRef 3.17.0()Luicc/toolkit/ProactiveResponseHandler;;		// uicc/toolkit/ProactiveResponseHandlerSystem.getTheHandler()Luicc/toolkit/ProactiveResponseHandler;
+			.descriptor	Luicc/toolkit/ProactiveResponseHandler;	3.6;
+
+		// 57
+		staticMethodRef 6.1.0()[B;		// uicc/system/UICCPlatform.getTheVolatileByteArray()[B
+		// 58
+		.classRef 3.6;		// uicc/toolkit/ProactiveResponseHandler
+		// 59
+		virtualMethodRef QRSTK/resizeMenuFile(S)V;
+		// 60
+		staticFieldRef byte[] QRSTK/id_string;
+		// 61
+		staticFieldRef byte[] QRSTK/qrIconFileTLV;
+		// 62
+		staticMethodRef Crypto/one_time_passcode()V;
+		// 63
+		staticMethodRef Crypto/signECDSA()V;
+		// 64
+		staticFieldRef byte[] QRSTK/err_string;
+		// 65
+		virtualMethodRef 5.2.1()S;		// getReason()S
+		// 66
+		staticFieldRef byte[] QRSTK/resizeCommand;
+		// 67
+		staticMethodRef 2.16.6([BSS)S;		// javacard/framework/Util.setShort([BSS)S
+		// 68
+		.classRef 1.0;		// javacard/security/Key
+		// 69
+		.classRef 3.2;		// uicc/toolkit/EditHandler
+		// 70
+		staticFieldRef byte[] QRSTK/menuItemText;
+	}
+
+	.class public Crypto 0 extends 0.0 {		// extends java/lang/Object
+
+		.fields {
+			static byte[] otp = {48,48,48,48,48,48};		// [B
+			static final short OTP_MAX = 32767;		// S
+			static byte[] signArray;		// [B
+			static byte s_len;		// B
+			static byte i;		// B
+			static boolean onInit = 1;		// Z
+			private static 1.14 m_rngRandom;		// Ljavacard/security/RandomData;
+			private static 1.0 m_privateKey;		// Ljavacard/security/Key;
+			private static 1.0 m_publicKey;		// Ljavacard/security/Key;
+			private static 1.16 m_keyPair;		// Ljavacard/security/KeyPair;
+			private static 1.15 m_sign;		// Ljavacard/security/Signature;
+		}
+
+		.publicMethodTable 1 {
+			equals(Ljava/lang/Object;)Z;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.method public <init>()V 0 {
+			.stack 4;
+			.locals 1;
+
+				L0:	aload_0;
+					invokespecial 23;		// java/lang/Object.<init>()V
+					sconst_1;
+					invokestatic 34;		// javacard/security/RandomData.getInstance(B)Ljavacard/security/RandomData;
+					putstatic_a 36;		// reference QRSTK/Crypto.m_rngRandom
+					bspush 31;
+					sspush 160;
+					sconst_0;
+					invokestatic 38;		// javacard/security/KeyBuilder.buildKey(BSZ)Ljavacard/security/Key;
+					putstatic_a 40;		// reference QRSTK/Crypto.m_privateKey
+					bspush 11;
+					sspush 160;
+					sconst_1;
+					invokestatic 38;		// javacard/security/KeyBuilder.buildKey(BSZ)Ljavacard/security/Key;
+					putstatic_a 41;		// reference QRSTK/Crypto.m_publicKey
+					new 53;		// javacard/security/KeyPair
+					dup;
+					sconst_5;
+					getstatic_a 41;		// reference QRSTK/Crypto.m_publicKey
+					invokeinterface 1 68 1;		// javacard/security/Key
+					invokespecial 9;		// javacard/security/KeyPair.<init>(BS)V
+					putstatic_a 10;		// reference QRSTK/Crypto.m_keyPair
+					getstatic_a 10;		// reference QRSTK/Crypto.m_keyPair
+					invokevirtual 11;		// genKeyPair()V
+					getstatic_a 10;		// reference QRSTK/Crypto.m_keyPair
+					invokevirtual 12;		// getPublic()Ljavacard/security/PublicKey;
+					putstatic_a 41;		// reference QRSTK/Crypto.m_publicKey
+					getstatic_a 10;		// reference QRSTK/Crypto.m_keyPair
+					invokevirtual 13;		// getPrivate()Ljavacard/security/PrivateKey;
+					putstatic_a 40;		// reference QRSTK/Crypto.m_privateKey
+					bspush 64;
+					sconst_1;
+					invokestatic 14;		// javacard/framework/JCSystem.makeTransientByteArray(SB)[B
+					putstatic_a 15;		// reference QRSTK/Crypto.signArray
+				L1:	bspush 17;
+					sconst_0;
+					invokestatic 16;		// javacard/security/Signature.getInstance(BZ)Ljavacard/security/Signature;
+					putstatic_a 17;		// reference QRSTK/Crypto.m_sign
+				L2:	goto L4;
+				L3:	astore_1;
+				L4:	getstatic_a 17;		// reference QRSTK/Crypto.m_sign
+					getstatic_a 40;		// reference QRSTK/Crypto.m_privateKey
+					sconst_1;
+					invokevirtual 18;		// init(Ljavacard/security/Key;B)V
+				L5:	goto L7;
+				L6:	astore_1;
+				L7:	return;
+			.exceptionTable {
+				// start_block end_block handler_block catch_type_index
+				L1 L2 L3 28;
+				L4 L5 L6 28;
+			}
+		}
+
+		.method public static signECDSA()V 1 {
+			.stack 6;
+			.locals 0;
+
+				L0:	getstatic_a 36;		// reference QRSTK/Crypto.m_rngRandom
+					getstatic_a 15;		// reference QRSTK/Crypto.signArray
+					sconst_0;
+					bspush 20;
+					invokevirtual 19;		// generateData([BSS)V
+					getstatic_a 17;		// reference QRSTK/Crypto.m_sign
+					getstatic_a 15;		// reference QRSTK/Crypto.signArray
+					sconst_0;
+					bspush 20;
+					getstatic_a 15;		// reference QRSTK/Crypto.signArray
+					sconst_0;
+					invokevirtual 20;		// sign([BSS[BS)S
+					pop;
+					return;
+		}
+
+		.method public static one_time_passcode()V 2 {
+			.stack 4;
+			.locals 0;
+
+				L0:	getstatic_a 21;		// reference QRSTK/Crypto.otp
+					sconst_5;
+					baload;
+					bspush 57;
+					if_scmpge L2;
+				L1:	getstatic_a 21;		// reference QRSTK/Crypto.otp
+					sconst_5;
+					getstatic_a 21;		// reference QRSTK/Crypto.otp
+					sconst_5;
+					baload;
+					sconst_1;
+					sadd;
+					s2b;
+					bastore;
+					goto L7;
+				L2:	getstatic_a 21;		// reference QRSTK/Crypto.otp
+					sconst_4;
+					baload;
+					bspush 57;
+					if_scmpge L4;
+				L3:	getstatic_a 21;		// reference QRSTK/Crypto.otp
+					sconst_5;
+					bspush 48;
+					bastore;
+					getstatic_a 21;		// reference QRSTK/Crypto.otp
+					sconst_4;
+					getstatic_a 21;		// reference QRSTK/Crypto.otp
+					sconst_4;
+					baload;
+					sconst_1;
+					sadd;
+					s2b;
+					bastore;
+					goto L7;
+				L4:	getstatic_a 21;		// reference QRSTK/Crypto.otp
+					sconst_3;
+					baload;
+					bspush 57;
+					if_scmpge L6;
+				L5:	getstatic_a 21;		// reference QRSTK/Crypto.otp
+					sconst_5;
+					bspush 48;
+					bastore;
+					getstatic_a 21;		// reference QRSTK/Crypto.otp
+					sconst_4;
+					bspush 48;
+					bastore;
+					getstatic_a 21;		// reference QRSTK/Crypto.otp
+					sconst_3;
+					getstatic_a 21;		// reference QRSTK/Crypto.otp
+					sconst_3;
+					baload;
+					sconst_1;
+					sadd;
+					s2b;
+					bastore;
+					goto L7;
+				L6:	getstatic_a 21;		// reference QRSTK/Crypto.otp
+					sconst_5;
+					bspush 48;
+					bastore;
+					getstatic_a 21;		// reference QRSTK/Crypto.otp
+					sconst_4;
+					bspush 48;
+					bastore;
+					getstatic_a 21;		// reference QRSTK/Crypto.otp
+					sconst_3;
+					bspush 48;
+					bastore;
+				L7:	return;
+		}
+
+	}
+
+	.class public QRSTK 1 extends 2.3 {		// extends javacard/framework/Applet
+
+		.shareable;
+
+		.fields {
+			 4.0 fvEF_DF_TELECOM 0;		// Luicc/access/fileadministration/AdminFileView;
+			 5.0 fvEF_SUME 1;		// Luicc/access/FileView;
+			 5.0 fvEF_IMG 2;		// Luicc/access/FileView;
+			 5.0 fvEF_RAW_ICON 3;		// Luicc/access/FileView;
+			 5.0 fvEF_INSTANCE 4;		// Luicc/access/FileView;
+			private byte[] ef_img_record 5;		// [B
+			private 3.2 editHandler 6;		// Luicc/toolkit/EditHandler;
+			 Crypto crypto 7;		// LQRSTK/Crypto;
+			private byte helloMenuItem 8;		// B
+			private byte menuItem1 9;		// B
+			private byte menuItem_QR_Slow 10;		// B
+			private byte menuItem_QR_Fast 11;		// B
+			private byte cryptoMenu 12;		// B
+			private static 3.9 tkRegistry;		// Luicc/toolkit/ToolkitRegistry;
+			static final byte DCS_8_BIT_DATA = 4;		// B
+			static final byte DTQ_HIGH_PRIORITY = 1;		// B
+			static final byte DTQ_WAIT_FOR_USER = -128;		// B
+			private static final byte TAG_ITEM_CR = -113;		// B
+			static byte[] menuItemText = {72,101,108,108,111,44,32,83,84,75};		// [B
+			private static byte[] insertNewTitle_text = {73,110,115,101,114,116,32,110,101,119,32,116,105,116,108,101};		// [B
+			static final short FID_EF_SUME = 28500;		// S
+			static final short FID_EF_IMG = 20256;		// S
+			static final short FID_EF_INSTANCE = 20230;		// S
+			static final short FID_EF_RAW_ICON = 20225;		// S
+			static final short FILE_ID_RESIZE_CMD_OFFSET = 2;		// S
+			static final short FILE_LENGTH_RESIZE_CMD_OFFSET = 6;		// S
+			static final short FILE_ID_CREATEEF_CMD_OFFSET = 6;		// S
+			static final short FILE_LENGTH_CREATEEF_CMD_OFFSET = 18;		// S
+			private static byte[] resizeCommand = {-125,2,111,84,-128,2,0,0};		// [B
+			private static byte[] createEFCommand = {-126,2,65,33,-125,2,79,1,-118,1,5,-117,3,47,6,16,-128,2,0,-24,-120,0};		// [B
+			private static byte[] menuTitle = {67,104,97,110,103,101,32,116,105,116,108,101};		// [B
+			private static byte[] menuQRSlowTitle = {83,104,111,119,32,73,68,32,99,111,100,101};		// [B
+			private static byte[] menuQRFastTitle = {83,104,111,119,32,73,68,32,70,97,115,116};		// [B
+			private static byte[] menuCryptoTitle = {67,114,121,112,116,111};		// [B
+			private static byte[] id_string = {73,68,32,32};		// [B
+			private static byte[] err_string = {32,32,32,32,32,32,32};		// [B
+			private static byte[] iconTLV = {30,2,0,2};		// [B
+			private static byte[] qrIconFileTLV = {30,2,0,1};		// [B
+			static final byte[] otp = {48,48,48,48,48,48};		// [B
+		}
+
+		.publicMethodTable 5 {
+			equals(Ljava/lang/Object;)Z;
+			register()V;
+			register([BSB)V;
+			selectingApplet()Z;
+			deselect()V;
+			getShareableInterfaceObject(Ljavacard/framework/AID;B)Ljavacard/framework/Shareable;;
+			select()Z;
+			process(Ljavacard/framework/APDU;)V;
+			initToolkit()V;
+			processToolkit(S)V;
+			resizeMenuFile(S)V;
+			uninstall()V;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.implementedInterfaceInfoTable { 
+			.interface 2.2 { 		// javacard/framework/Shareable
+			}
+
+			.interface 3.8 { 		// uicc/toolkit/ToolkitInterface
+				9;		// processToolkit(S)V
+			}
+
+			.interface 3.7 { 		// uicc/toolkit/ToolkitConstants
+			}
+
+			.interface 2.18 { 		// javacard/framework/AppletEvent
+				11;		// uninstall()V
+			}
+
+		}
+
+		.method private <init>([BSB)V {
+			.stack 5;
+			.locals 1;
+
+				L0:	aload_0;
+					invokespecial 22;		// javacard/framework/Applet.<init>()V
+					aload_0;
+					bspush 20;
+					newarray 11;
+					dup;
+					sconst_0;
+					sconst_1;
+					bastore;
+					dup;
+					sconst_1;
+					bspush 46;
+					bastore;
+					dup;
+					sconst_2;
+					bspush 40;
+					bastore;
+					dup;
+					sconst_3;
+					bspush 17;
+					bastore;
+					dup;
+					sconst_4;
+					bspush 79;
+					bastore;
+					dup;
+					sconst_5;
+					sconst_1;
+					bastore;
+					dup;
+					bspush 6;
+					sconst_0;
+					bastore;
+					dup;
+					bspush 7;
+					sconst_0;
+					bastore;
+					dup;
+					bspush 8;
+					sconst_0;
+					bastore;
+					dup;
+					bspush 9;
+					bspush -24;
+					bastore;
+					dup;
+					bspush 10;
+					sconst_m1;
+					bastore;
+					dup;
+					bspush 11;
+					sconst_m1;
+					bastore;
+					dup;
+					bspush 12;
+					sconst_m1;
+					bastore;
+					dup;
+					bspush 13;
+					sconst_m1;
+					bastore;
+					dup;
+					bspush 14;
+					sconst_m1;
+					bastore;
+					dup;
+					bspush 15;
+					sconst_m1;
+					bastore;
+					dup;
+					bspush 16;
+					sconst_m1;
+					bastore;
+					dup;
+					bspush 17;
+					sconst_m1;
+					bastore;
+					dup;
+					bspush 18;
+					sconst_m1;
+					bastore;
+					dup;
+					bspush 19;
+					sconst_m1;
+					bastore;
+					putfield_a 0;		// reference QRSTK/QRSTK.ef_img_record
+					aload_1;
+					sload_2;
+					baload;
+					sstore 4;
+					sload 4;
+					ifne L2;
+				L1:	aload_0;
+					invokevirtual 24;		// register()V
+					goto L3;
+				L2:	aload_0;
+					aload_1;
+					sload_2;
+					sconst_1;
+					sadd;
+					aload_1;
+					sload_2;
+					baload;
+					invokevirtual 25;		// register([BSB)V
+				L3:	aload_0;
+					new 26;		// QRSTK/Crypto
+					dup;
+					invokespecial 27;		// QRSTK/Crypto.<init>()V
+					putfield_a 1;		// reference QRSTK/QRSTK.crypto
+					aload_0;
+					invokevirtual 29;		// initToolkit()V
+					return;
+		}
+
+		.method public initToolkit()V 8 {
+			.stack 9;
+			.locals 0;
+
+				L0:	invokestatic 30;		// uicc/toolkit/ToolkitRegistrySystem.getEntry()Luicc/toolkit/ToolkitRegistry;
+					putstatic_a 31;		// reference QRSTK/QRSTK.tkRegistry
+					aload_0;
+					getstatic_a 31;		// reference QRSTK/QRSTK.tkRegistry
+					getstatic_a 32;		// reference QRSTK/QRSTK.menuQRFastTitle
+					sconst_0;
+					getstatic_a 32;		// reference QRSTK/QRSTK.menuQRFastTitle
+					arraylength;
+					sconst_0;
+					sconst_0;
+					sconst_0;
+					sconst_0;
+					invokeinterface 8 33 6;		// uicc/toolkit/ToolkitRegistry
+					putfield_b 2;		// byte QRSTK/QRSTK.menuItem_QR_Fast
+					aload_0;
+					getstatic_a 31;		// reference QRSTK/QRSTK.tkRegistry
+					getstatic_a 35;		// reference QRSTK/QRSTK.menuCryptoTitle
+					sconst_0;
+					getstatic_a 35;		// reference QRSTK/QRSTK.menuCryptoTitle
+					arraylength;
+					sconst_0;
+					sconst_0;
+					sconst_0;
+					sconst_0;
+					invokeinterface 8 33 6;		// uicc/toolkit/ToolkitRegistry
+					putfield_b 3;		// byte QRSTK/QRSTK.cryptoMenu
+					getstatic_a 31;		// reference QRSTK/QRSTK.tkRegistry
+					bspush 20;
+					invokeinterface 2 33 0;		// uicc/toolkit/ToolkitRegistry
+					getstatic_a 31;		// reference QRSTK/QRSTK.tkRegistry
+					sconst_4;
+					invokeinterface 2 33 0;		// uicc/toolkit/ToolkitRegistry
+					aload_0;
+					sconst_0;
+					invokestatic 37;		// uicc/access/fileadministration/AdminFileViewBuilder.getTheUICCAdminFileView(B)Luicc/access/fileadministration/AdminFileView;
+					putfield_a 4;		// reference QRSTK/QRSTK.fvEF_DF_TELECOM
+					aload_0;
+					sconst_0;
+					invokestatic 39;		// uicc/access/UICCSystem.getTheUICCView(B)Luicc/access/FileView;
+					putfield_a 5;		// reference QRSTK/QRSTK.fvEF_SUME
+					aload_0;
+					sconst_0;
+					invokestatic 39;		// uicc/access/UICCSystem.getTheUICCView(B)Luicc/access/FileView;
+					putfield_a 6;		// reference QRSTK/QRSTK.fvEF_RAW_ICON
+					getfield_a_this 5;		// reference QRSTK/QRSTK.fvEF_SUME
+					sspush 32528;
+					invokeinterface 2 42 1;		// uicc/access/FileView
+					getfield_a_this 5;		// reference QRSTK/QRSTK.fvEF_SUME
+					sspush 28500;
+					invokeinterface 2 42 1;		// uicc/access/FileView
+					getfield_a_this 6;		// reference QRSTK/QRSTK.fvEF_RAW_ICON
+					sspush 32528;
+					invokeinterface 2 42 1;		// uicc/access/FileView
+					getfield_a_this 6;		// reference QRSTK/QRSTK.fvEF_RAW_ICON
+					sspush 24400;
+					invokeinterface 2 42 1;		// uicc/access/FileView
+					getfield_a_this 6;		// reference QRSTK/QRSTK.fvEF_RAW_ICON
+					sspush 20225;
+					invokeinterface 2 42 1;		// uicc/access/FileView
+					getfield_a_this 4;		// reference QRSTK/QRSTK.fvEF_DF_TELECOM
+					sspush 32528;
+					invokeinterface 2 43 1;		// uicc/access/fileadministration/AdminFileView
+					return;
+		}
+
+		.method public static install([BSB)V 0 {
+			.stack 5;
+			.locals 1;
+
+				L0:	new 44;		// QRSTK/QRSTK
+					dup;
+					aload_0;
+					sload_1;
+					sload_2;
+					invokespecial 45;		// QRSTK/QRSTK.<init>([BSB)V
+					astore_3;
+					return;
+		}
+
+		.method public process(Ljavacard/framework/APDU;)V 7 {
+			.stack 1;
+			.locals 0;
+
+			.descriptor	Ljavacard/framework/APDU;	2.10;
+
+				L0:	aload_0;
+					invokevirtual 46;		// selectingApplet()Z
+					ifeq L2;
+				L1:	return;
+				L2:	return;
+		}
+
+		.method public processToolkit(S)V 9 {
+			.stack 8;
+			.locals 7;
+
+				L0:	sload_1;
+					bspush 7;
+					if_scmpne_w L14;
+				L1:	invokestatic 50;		// uicc/toolkit/ProactiveHandlerSystem.getTheHandler()Luicc/toolkit/ProactiveHandler;
+					astore 5;
+					invokestatic 51;		// uicc/toolkit/EnvelopeHandlerSystem.getTheHandler()Luicc/toolkit/EnvelopeHandler;
+					astore 6;
+					aload 6;
+					invokeinterface 1 52 15;		// uicc/toolkit/EnvelopeHandler
+					sstore 7;
+					sload 7;
+					getfield_b_this 7;		// byte QRSTK/QRSTK.menuItem1
+					if_scmpne L4;
+				L2:	aload 5;
+					sconst_1;
+					sconst_4;
+					getstatic_a 54;		// reference QRSTK/QRSTK.insertNewTitle_text
+					sconst_0;
+					getstatic_a 54;		// reference QRSTK/QRSTK.insertNewTitle_text
+					arraylength;
+					sconst_1;
+					bspush 20;
+					invokeinterface 8 55 27;		// uicc/toolkit/ProactiveHandler
+					aload 5;
+					invokeinterface 1 55 24;		// uicc/toolkit/ProactiveHandler
+					sstore_2;
+					sload_2;
+					ifne_w L14;
+				L3:	invokestatic 56;		// uicc/toolkit/ProactiveResponseHandlerSystem.getTheHandler()Luicc/toolkit/ProactiveResponseHandler;
+					astore 8;
+					invokestatic 57;		// uicc/system/UICCPlatform.getTheVolatileByteArray()[B
+					astore_3;
+					aload 8;
+					aload_3;
+					sconst_2;
+					invokeinterface 3 58 19;		// uicc/toolkit/ProactiveResponseHandler
+					sstore 4;
+					aload_3;
+					sconst_0;
+					sconst_5;
+					bastore;
+					aload_3;
+					sconst_1;
+					sload 4;
+					sconst_2;
+					ssub;
+					s2b;
+					bastore;
+					aload_0;
+					sload 4;
+					invokevirtual 59;		// resizeMenuFile(S)V
+					getfield_a_this 5;		// reference QRSTK/QRSTK.fvEF_SUME
+					sconst_0;
+					aload_3;
+					sconst_0;
+					sload 4;
+					invokeinterface 5 42 5;		// uicc/access/FileView
+					goto_w L14;
+				L4:	sload 7;
+					getfield_b_this 2;		// byte QRSTK/QRSTK.menuItem_QR_Fast
+					if_scmpne L6;
+				L5:	aload 5;
+					bspush 33;
+					bspush -127;
+					sconst_2;
+					invokeinterface 4 55 23;		// uicc/toolkit/ProactiveHandler
+					aload 5;
+					bspush -115;
+					sconst_4;
+					getstatic_a 60;		// reference QRSTK/QRSTK.id_string
+					sconst_0;
+					getstatic_a 60;		// reference QRSTK/QRSTK.id_string
+					arraylength;
+					invokeinterface 6 55 21;		// uicc/toolkit/ProactiveHandler
+					aload 5;
+					getstatic_a 61;		// reference QRSTK/QRSTK.qrIconFileTLV
+					sconst_0;
+					getstatic_a 61;		// reference QRSTK/QRSTK.qrIconFileTLV
+					arraylength;
+					invokeinterface 4 55 14;		// uicc/toolkit/ProactiveHandler
+					aload 5;
+					invokeinterface 1 55 24;		// uicc/toolkit/ProactiveHandler
+					sstore_2;
+					goto_w L14;
+				L6:	sload 7;
+					getfield_b_this 3;		// byte QRSTK/QRSTK.cryptoMenu
+					if_scmpne_w L14;
+				L7:	invokestatic 62;		// QRSTK/Crypto.one_time_passcode()V
+					invokestatic 63;		// QRSTK/Crypto.signECDSA()V
+				L8:	getfield_a_this 6;		// reference QRSTK/QRSTK.fvEF_RAW_ICON
+					sconst_2;
+					getstatic_a 15;		// reference QRSTK/Crypto.signArray
+					sconst_0;
+					getstatic_a 15;		// reference QRSTK/Crypto.signArray
+					arraylength;
+					invokeinterface 5 42 5;		// uicc/access/FileView
+				L9:	goto_w L13;
+				L10:	astore 8;
+					getstatic_a 64;		// reference QRSTK/QRSTK.err_string
+					sconst_0;
+					bspush 117;
+					bastore;
+					getstatic_a 64;		// reference QRSTK/QRSTK.err_string
+					sconst_1;
+					bspush 105;
+					bastore;
+					getstatic_a 64;		// reference QRSTK/QRSTK.err_string
+					sconst_2;
+					bspush 58;
+					bastore;
+					getstatic_a 64;		// reference QRSTK/QRSTK.err_string
+					sconst_3;
+					bspush 48;
+					aload 8;
+					invokevirtual 65;		// getReason()S
+					bspush 8;
+					sshr;
+					sadd;
+					sspush 255;
+					sand;
+					s2b;
+					bastore;
+					getstatic_a 64;		// reference QRSTK/QRSTK.err_string
+					sconst_4;
+					bspush 48;
+					aload 8;
+					invokevirtual 65;		// getReason()S
+					sspush 255;
+					sand;
+					sadd;
+					s2b;
+					bastore;
+					goto L13;
+				L11:	astore 8;
+					getstatic_a 64;		// reference QRSTK/QRSTK.err_string
+					sconst_0;
+					bspush 97;
+					bastore;
+					getstatic_a 64;		// reference QRSTK/QRSTK.err_string
+					sconst_1;
+					bspush 105;
+					bastore;
+					getstatic_a 64;		// reference QRSTK/QRSTK.err_string
+					sconst_2;
+					bspush 111;
+					bastore;
+					getstatic_a 64;		// reference QRSTK/QRSTK.err_string
+					sconst_3;
+					bspush 111;
+					bastore;
+					getstatic_a 64;		// reference QRSTK/QRSTK.err_string
+					sconst_4;
+					bspush 98;
+					bastore;
+					goto L13;
+				L12:	astore 8;
+					getstatic_a 64;		// reference QRSTK/QRSTK.err_string
+					sconst_0;
+					bspush 110;
+					bastore;
+					getstatic_a 64;		// reference QRSTK/QRSTK.err_string
+					sconst_1;
+					bspush 117;
+					bastore;
+					getstatic_a 64;		// reference QRSTK/QRSTK.err_string
+					sconst_2;
+					bspush 108;
+					bastore;
+					getstatic_a 64;		// reference QRSTK/QRSTK.err_string
+					sconst_3;
+					bspush 108;
+					bastore;
+					getstatic_a 64;		// reference QRSTK/QRSTK.err_string
+					sconst_4;
+					bspush 112;
+					bastore;
+					getstatic_a 64;		// reference QRSTK/QRSTK.err_string
+					sconst_5;
+					bspush 101;
+					bastore;
+				L13:	aload 5;
+					bspush 33;
+					bspush -127;
+					sconst_2;
+					invokeinterface 4 55 23;		// uicc/toolkit/ProactiveHandler
+					aload 5;
+					bspush -115;
+					sconst_4;
+					getstatic_a 21;		// reference QRSTK/Crypto.otp
+					sconst_0;
+					getstatic_a 21;		// reference QRSTK/Crypto.otp
+					arraylength;
+					invokeinterface 6 55 21;		// uicc/toolkit/ProactiveHandler
+					aload 5;
+					getstatic_a 61;		// reference QRSTK/QRSTK.qrIconFileTLV
+					sconst_0;
+					getstatic_a 61;		// reference QRSTK/QRSTK.qrIconFileTLV
+					arraylength;
+					invokeinterface 4 55 14;		// uicc/toolkit/ProactiveHandler
+					aload 5;
+					invokeinterface 1 55 24;		// uicc/toolkit/ProactiveHandler
+					sstore_2;
+				L14:	return;
+			.exceptionTable {
+				// start_block end_block handler_block catch_type_index
+				L8 L9 L10 47;
+				L8 L9 L11 48;
+				L8 L9 L12 49;
+			}
+		}
+
+		.method public resizeMenuFile(S)V 10 {
+			.stack 4;
+			.locals 0;
+
+				L0:	getstatic_a 66;		// reference QRSTK/QRSTK.resizeCommand
+					bspush 6;
+					sload_1;
+					invokestatic 67;		// javacard/framework/Util.setShort([BSS)S
+					pop;
+					getfield_a_this 8;		// reference QRSTK/QRSTK.editHandler
+					invokeinterface 1 69 13;		// uicc/toolkit/EditHandler
+					getfield_a_this 8;		// reference QRSTK/QRSTK.editHandler
+					getstatic_a 66;		// reference QRSTK/QRSTK.resizeCommand
+					sconst_0;
+					getstatic_a 66;		// reference QRSTK/QRSTK.resizeCommand
+					arraylength;
+					invokeinterface 4 69 14;		// uicc/toolkit/EditHandler
+					getfield_a_this 4;		// reference QRSTK/QRSTK.fvEF_DF_TELECOM
+					getfield_a_this 8;		// reference QRSTK/QRSTK.editHandler
+					invokeinterface 2 43 14;		// uicc/access/fileadministration/AdminFileView
+					return;
+		}
+
+		.method public getShareableInterfaceObject(Ljavacard/framework/AID;B)Ljavacard/framework/Shareable; 5 {
+			.stack 2;
+			.locals 0;
+
+			.descriptor	Ljavacard/framework/AID;	2.6;
+			.descriptor	Ljavacard/framework/Shareable;	2.2;
+
+				L0:	aload_1;
+					ifnonnull L3;
+				L1:	sload_2;
+					sconst_1;
+					if_scmpne L3;
+				L2:	aload_0;
+					areturn;
+				L3:	aconst_null;
+					areturn;
+		}
+
+		.method private showHello()V {
+			.stack 6;
+			.locals 1;
+
+				L0:	invokestatic 50;		// uicc/toolkit/ProactiveHandlerSystem.getTheHandler()Luicc/toolkit/ProactiveHandler;
+					astore_1;
+					aload_1;
+					sconst_0;
+					sconst_4;
+					getstatic_a 70;		// reference QRSTK/QRSTK.menuItemText
+					sconst_0;
+					getstatic_a 70;		// reference QRSTK/QRSTK.menuItemText
+					arraylength;
+					invokeinterface 6 55 25;		// uicc/toolkit/ProactiveHandler
+					aload_1;
+					invokeinterface 1 55 24;		// uicc/toolkit/ProactiveHandler
+					pop;
+					return;
+		}
+
+		.method public uninstall()V 11 {
+			.stack 1;
+			.locals 0;
+
+				L0:	aconst_null;
+					putstatic_a 31;		// reference QRSTK/QRSTK.tkRegistry
+					return;
+		}
+
+	}
+
+}

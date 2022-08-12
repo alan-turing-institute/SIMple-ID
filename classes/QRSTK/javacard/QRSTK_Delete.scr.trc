@@ -1,0 +1,7 @@
+//// Start logging at 2022/04/06, 10:40:04, Wed ////
+// @E:\UICC_QR_Code_Authenticator\DevApplet V2.3\QRAuthy\SIMoME\classes\QRSTK\javacard\QRSTK_Delete.scr (Start of batch file)
+00 A4 04 00 00 // 11 ms
+80 50 00 00 08 0C 73 CA AD 0C 17 8E 7E // 21 ms
+00 C0 00 00 1C // 11 ms
+84 82 00 00 10 94 21 D5 18 A9 3F DD E6 CA 71 72 74 C3 61 C5 CD // 42 ms
+80 E4 00 00 0D 4F 0B A0 00 00 00 00 01 02 03 08 01 01 // 95 ms

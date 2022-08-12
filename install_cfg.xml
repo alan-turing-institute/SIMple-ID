@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<CONFIG>
+
+<CAD_CONFIG>
+
+	<!-- Card Manager AID -->
+	<property name="CardManagerAID" value="A000000003000000"/>
+	
+	<property name="LogicalChannel" value="00"/>
+	
+	<!-- External Authication -->
+	<property name="Authentication" SecureChannel="02" SecureLevel="00" KeyVersion="00" KeyIndex="01" Key="404142434445464748494a4b4c4d4e4f"/>
+	
+</CAD_CONFIG>
+
+<APP_CONFIG>
+
+	<!-- Install parameters depend on GP Card Specific 2.2.1, 11.5.2.3.2 Data field for install[for install] and 11.5.2.3.7 install command Parameters -->
+	<!-- 1st Applet Instance -->
+	<property name="InstallFields" 
+				PackageAID		="A000000000010203080000" 
+				AppletAID		="A000000000010203080100" 
+				InstanceAID		="A000000000010203080101" 
+				Privileges		="00" 
+				AppletParameters=""
+				SystemParameters=""
+				USIMParameters	="801201001406000000000000000000000000000081030001008203000100"
+				CRTSignature	=""
+	/>
+
+	<!--OG:800E0000200400000000000000000000-->
+	<!--80120100140600000000000000000000000000008103000100001082050003000010-->
+	<!--8012010014060000000000000000000000000000810600040200000400820600040200000400-->
+	
+	<!--
+	80: TLV UICC Toolkit application specific parameters
+	XX: Length of the following parameters in bytes
+	00: V Priority Level
+	00: V Max. number of timers
+	20: V Maximum text length for a menu entry
+	04: V Maximum number of menu entries
+	00: 1st menu position
+	00: 1st menu entry
+	00: V Maximum number of channels
+	00: LV Minimum Security Level field
+	00: LV TAR Value(s) 
+	00: V Maximum number of services
+	-->
+
+	<!--
+	81: TLV UICC Toolkit application specific parameters
+	05: Length of the UICC Access Application specific parameters field
+	UICC Access application specific params
+	00: Length of UICC file system AID
+	01: Length of Access Domin for UICC file system
+	Access Domain coding
+	00 : Access Domain Parameter (Full access to the file system)
+	OR
+	02 : UICC access mechanism plus ADD length 3:
+		000004: ALWAYS (0b000001000 third byte, see 8.2.1.3.2.5.2 in TS 102 226
+	00: Lenth of access domain DAP 
+	
+	...
+	-->
+
+	<!--
+	82: TLV UICC Toolkit application specific parameters
+	XX: Length of the following parameters in bytes
+	...
+	-->
+
+	<!-- 2nd Applet Instance
+	<property name="InstallFields" 
+				PackageAID		="A000000000010203040000" 
+				AppletAID		="A000000000010203040200" 
+				InstanceAID		="A000000000010203040201" 
+				Privileges		="00" 
+				AppletParameters=""
+				SystemParameters=""
+				USIMParameters	="800E0000200300000000000000000000"
+				CRTSignature	=""
+	/>
+	 -->
+</APP_CONFIG>
+
+</CONFIG>
