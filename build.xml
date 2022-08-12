@@ -7,14 +7,11 @@
     <!-- Create the distribution directory -->
     <taskdef name="javacard" classname="pro.javacard.ant.JavaCard" classpath="ant-javacard.jar"/>
     <javacard>
-      <cap targetsdk="../../JavaLib/java_card_kit-3_0_4" jckit="../../JavaLib/java_card_kit-3_0_4" aid = "A000000000010203080000" output="bin/QRSTK.cap" sources="src" classes="bin" version="1.0">
+      <cap targetsdk="oracle_javacard_sdks/jc304_kit" jckit="oracle_javacard_sdks/jc304_kit" aid = "A000000000010203080000" output="bin/QRSTK.cap" sources="src" classes="bin" version="1.0">
         <applet class="QRSTK.QRSTK" aid="A000000000010203080100"/> 
-        <!--import exps="../../Dev/Exp" jar="../../Dev/lib/102241_Annex_D.jar"/-->
-        <!--import exps="../../Dev/Exp" jar="../../Dev/lib/31130_Annex_D.jar"/-->
-        <import exps="../../../exp" jar="../../../lib/sim.jar"/>
-        <import exps="../../../exp" jar="../../../lib/uicc-api-for-java-card-REL-7-6.jar"/>
-        <import exps="../../../exp" jar="../../../lib/usim-api-for-java-card-REL-15_2.jar"/>
-        <!--import exps="../../Dev/Exp" jar="../../Dev/lib/simome_api.jar"/-->
+        <import exps="exp" jar="lib/sim.jar"/>
+        <import exps="exp" jar="lib/uicc-api-for-java-card-REL-7-6.jar"/>
+        <import exps="exp" jar="lib/usim-api-for-java-card-REL-15_2.jar"/>
         <!--import exps="../../Dev/Exp" jar="../../Dev/lib/gpapi-globalplatform.jar"/-->
       </cap>
     </javacard>

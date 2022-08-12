@@ -1,18 +1,18 @@
-# QR codes for authentication using STK
+# SIMple ID: QR codes for authentication on basic and feature phones
 
-This repository contains a Java Card 2.2.1 applet which generates and displays QR codes for authentication using (almost*) the standard SIM ToolKit (STK) API. 
+This repository contains a Java Card 3.0.4+ applet which generates and displays QR codes for authentication using (almost*) the standard SIM ToolKit (STK) API. The itention is to permit low-cost, basic and feature phones (e.g., Jio) to offer SIM-secured authentication modes based on QR codes. A paper fully describing the techniques will be added shortly.
 
 [See video!](https://youtu.be/a3-DHi6-Dno)
 
 # Requirements
 
 Tested with:
-* [sysmoISIM-SJA2](http://shop.sysmocom.de/products/sysmoISIM-SJA2) with ADM keys. Do not unlock the card.
-* Nokia 106 Feature Phone and TTfone TT240 Smart-Feature Phone
+* [Taisys SIMoME](https://web.archive.org/web/20160528062852/http://taisys.com/mwc2016/download/SIMoME_JAR_VAULT.pdf)
+* TTfone TT240 Smart-Feature Phone (JioPhone sold in the UK)
 * PCSC card reader e.g. Gemalto IDBridge CT30
 * OpenJDK 11
 * Debian bullseye and OSX X 10.15.7
-* Python 2.7.18
+* Python 3.9.10
 * The pycrypto and pyscard libraries
 ```
 pip2 install --user pycrypto pyscard
@@ -36,11 +36,11 @@ export JAVA_HOME=$(/usr/libexec/java_home -v 11)
 
 Clone this repository:
 ```
-git clone https://github.com/alan-turing-institute/UICC_QR_Code_Authenticator.git
-cd UICC_QR_Code_Authenticator
+git clone https://github.com/alan-turing-institute/SIMple-ID.git
+cd SIMple-ID
 ```
 
-Clone the Javacard SDK and sim-tools dependencies:
+__Clone the Javacard SDK and sim-tools dependencies:__
 ```
 git submodule update --init --recursive
 ```
