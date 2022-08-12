@@ -2,7 +2,7 @@
 
 This repository contains a Java Card 2.2.1 applet which generates and displays QR codes for authentication using (almost*) the standard SIM ToolKit (STK) API. 
 
-[See video!](X)
+[See video!](https://youtu.be/a3-DHi6-Dno)
 
 # Requirements
 
