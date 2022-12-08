@@ -171,7 +171,7 @@ public class Crypto {
         hOTP();                                                                        // Generate a new OTP
 
         publicW[0] = (byte) TYPE_VID;
-        publicW[1] = (byte)(m_RSA_publicKey.getSize()/8); // size in bytes
+        publicW[1] = (byte)(m_RSA_publicKey.getSize()); // size in bytes
 
         // Build message to be encrypted as otp|NIN|sign(otp|NIN)
         Util.arrayCopyNonAtomic(otp, (short) 0, rsa_buffer, (short) 0, (short) otp.length);
