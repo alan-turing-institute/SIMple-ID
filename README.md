@@ -79,4 +79,4 @@ python2 sim-tools/shadysim/shadysim_isim.py --pcsc -d f07002CA44\
 # Credits and Gratitude
 
 * This work was supported, in whole or in part, by the Bill & Melinda Gates Foundation [INV-001309].
-* We are very thankful for @mrlnc's [HelloSTK2 repository](https://github.com/mrlnc/HelloSTK2) which made getting STK to work on the sysmoISIM-SJA2 a walk in the park!
+* We are very thankful for @mrlnc's [HelloSTK2 repository](https://github.com/mrlnc/HelloSTK2) which made getting STK to work on the sysmoISIM-SJA2 less of a headache!
