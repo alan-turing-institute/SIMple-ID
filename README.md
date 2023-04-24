@@ -1,8 +1,8 @@
 # SIMple ID: QR codes for authentication on basic and feature phones
 
-This repository contains a Java Card 3.0.4+ applet which generates and displays QR codes for authentication using (almost*) the standard SIM ToolKit (STK) API. The itention is to permit low-cost, basic and feature phones (e.g., Jio) to offer SIM-secured authentication modes based on QR codes. A paper fully describing the techniques will be added shortly.
+This repository contains a Java Card 3.0.4+ applet which generates and displays QR codes for authentication using (almost*) the standard SIM ToolKit (STK) API. The itention is to permit low-cost, basic and feature phones (e.g., Jio) to offer SIM-secured authentication modes based on QR codes. 
 
-[See video!](https://youtu.be/a3-DHi6-Dno)
+You can also [read our paper](https://chrishicks.io/assets/pdf/SIMple_ID_STM22.pdf) and watch a [short demonstration video](https://youtu.be/a3-DHi6-Dno).
 
 # Requirements
 
